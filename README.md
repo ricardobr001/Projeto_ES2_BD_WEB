@@ -9,3 +9,5 @@ Projeto desenvolvido envolvendo as disciplinas de Engenharia de Software 2, Labo
 [@ricardobr001](https://github.com/ricardobr001)
 
 [@guuhinfo](https://github.com/guuhinfo)
+
+[@andradecarlos](https://github.com/andradecarlos)
