@@ -95,27 +95,27 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4 portfolio-item">
+                <div class="col-sm-6 portfolio-item">
                     <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/cabin.png" class="img-responsive" alt="Cabin">
+                        <img src="img/icone-busca.png" class="img-responsive" alt="Cabin">
                     </a>
                 </div>
-                <div class="col-sm-4 portfolio-item">
+                <div class="col-sm-6 portfolio-item">
                     <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/cake.png" class="img-responsive" alt="Slice of cake">
+                        <img src="img/podio.jpg" class="img-responsive" alt="Slice of cake">
                     </a>
                 </div>
-                <div class="col-sm-4 portfolio-item">
+                <!-- <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
@@ -154,7 +154,7 @@
                         </div>
                         <img src="img/portfolio/submarine.png" class="img-responsive" alt="Submarine">
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
