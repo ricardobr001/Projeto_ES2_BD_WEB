@@ -71,13 +71,13 @@
         <div class="container" id="maincontent" tabindex="-1">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="img/oscar-logo.jpg" alt="">
+                    <img class="img-responsive" src="img/imdb.png" alt="">
                     <div class="intro-text">
                         <h1 class="name">Projeto Integrado</h1>
                         <hr class="star-light">
                         <p>Disciplinas envolvidas:</p>
                         <p>Desenvolvimento Web</p>
-                        <p>Laboratorio de Banco de Dados</p>
+                        <p>Laboratório de Banco de Dados</p>
                         <p>Engenharia de Software</p>
                     </div>
                 </div>
@@ -102,8 +102,9 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/icone-busca.png" class="img-responsive" alt="Cabin">
+                        <img src="img/foto.jpg" class="img-responsive" alt="Cabin">
                     </a>
+                    <p class="text-center">Busca comum</p>
                 </div>
                 <div class="col-sm-6 portfolio-item">
                     <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
@@ -114,6 +115,7 @@
                         </div>
                         <img src="img/podio.jpg" class="img-responsive" alt="Slice of cake">
                     </a>
+                    <p class="text-center">Ranking</p>
                 </div>
                 <!-- <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
@@ -279,7 +281,7 @@
                     <div class="footer-col col-md-6">
                         <h3>Sobre nós</h3>
                         <p>Estudantes de Ciência da Computação na
-                          <br><a href="http://www.sorocaba.ufscar.br/ufscar/">UFSCar - Sorocaba</a>.</p>
+                          <br><a href="http://www.sorocaba.ufscar.br/ufscar/">UFSCar - Sorocaba</a></p>
                     </div>
                 </div>
             </div>
