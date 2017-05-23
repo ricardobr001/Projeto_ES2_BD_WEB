@@ -72,7 +72,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-text">
-                        <h1 class="name">Fazer caixas do input e back-end para ranking</h1>
+                        <h1 class="name">Fazer back e preparar front para receber resposta da busca</h1>
                         <hr class="star-light">
                     </div>
                 </div>
@@ -100,7 +100,8 @@
                                         type="text"
                                         class="form-control"
                                         placeholder="Nome do ator(a)"
-                                        id="name"
+                                        id="nome"
+                                        name="nome"
                                         required data-validation-required-message="Please enter your name."
                                     >
                                 </div>
@@ -112,7 +113,8 @@
                         <div class="row control-group">
                             <div class="form-group col-sm-4">
                                 <label for="genero">Gênero</label>
-                                <select class="form-control">
+                                <select class="form-control" id="genero" name="genero">
+                                    <option>Escolher</option>
                                     <option>Action</option>
                                     <option>Drama</option>
                                     <option>Terror</option>
