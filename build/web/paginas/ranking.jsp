@@ -92,7 +92,7 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <form method="POST" action="submit">
                         <div class="input_fields_wrap">
-                            <button class="add_field_button list-group-item list-group-item-success">Adicionar mais atores</button>
+                            <button class="add_field_button list-group-item list-group-item-success" id="AddAtor">Adicionar mais atores</button>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="nome">Nome do Ator(a)</label>

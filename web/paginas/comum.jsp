@@ -79,6 +79,63 @@
             </div>
         </div>
     </header>
+    
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Buscar</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <form method="POST" action="submit">
+                        <div class="input_fields_wrap">
+                            <button class="add_field_button list-group-item list-group-item-success" id="AddAtor">Adicionar mais atores</button>
+                            <button class="add_field_button list-group-item list-group-item-success" id="AddIdioma">Adicionar mais idiomas</button>
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <label for="nome">Nome do Ator(a)</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Nome do ator(a)"
+                                        id="nome"
+                                        name="nome[]"
+                                        required data-validation-required-message="Please enter your name."
+                                    >                                    
+                                </div>                               
+                                    <!-- <div class="form-group col-xs-3 controls">
+                                        <button class="remove_field list-group-item list-group-item-warning">Remover</button>
+                                    </div> -->
+                            </div>
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <label for="idioma">Idioma</label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Idioma"
+                                            id="idioma"
+                                            name="idioma[]"
+                                            required data-validation-required-message="Please enter a language."
+                                        >
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button type="submit" class="btn btn-success btn-lg">Buscar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="text-center">
@@ -122,6 +179,7 @@
     <!-- Contact Form JavaScript -->
     <script src="../js/jqBootstrapValidation.js"></script>
     <script src="../js/contact_me.js"></script>
+    <script src="../js/app.js"></script>
 
     <!-- Theme JavaScript -->
     <script src="../js/freelancer.min.js"></script>
