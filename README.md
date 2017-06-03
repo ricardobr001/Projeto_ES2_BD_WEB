@@ -3,12 +3,12 @@ Projeto desenvolvido envolvendo as disciplinas de Engenharia de Software 2, Labo
 
 # Projeto desenvolvido por:
 
-[@isasalmeron]https://github.com/isasalmeron
+[@isasalmeron](https://github.com/isasalmeron)
 
-[@lucianesl]https://github.com/lucianesl
+[@lucianesl](https://github.com/lucianesl)
 
-[@ricardobr001]https://github.com/ricardobr001
+[@ricardobr001](https://github.com/ricardobr001)
 
-[@guuhinfo]https://github.com/guuhinfo
+[@guuhinfo](https://github.com/guuhinfo)
 
-[@andradecarlos]https://github.com/andradecarlos
+[@andradecarlos](https://github.com/andradecarlos)
