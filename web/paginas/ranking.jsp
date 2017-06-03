@@ -101,7 +101,7 @@
                                         class="form-control"
                                         placeholder="Nome do ator(a)"
                                         id="nome"
-                                        name="nome"
+                                        name="nome[]"
                                         required data-validation-required-message="Please enter your name."
                                     >
                                 </div>
@@ -111,9 +111,21 @@
                             </div>
                         </div>
                         <div class="row control-group">
-                            <div class="form-group col-sm-4">
-                                <label for="genero">Gênero</label>
-                                <select class="form-control" id="genero" name="genero">
+                            <div class="form-group col-sm-6">
+                                <label for="genero">Primeiro gênero</label>
+                                <select class="form-control" id="genero" name="genero[]">
+                                    <option>Escolher</option>
+                                    <option>Action</option>
+                                    <option>Drama</option>
+                                    <option>Terror</option>
+                                    <option>Biography</option>
+                                    <option>History</option>
+                                    <option>Adventure</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label for="genero">Segundo gênero</label>
+                                <select class="form-control" id="genero" name="genero[]">
                                     <option>Escolher</option>
                                     <option>Action</option>
                                     <option>Drama</option>
