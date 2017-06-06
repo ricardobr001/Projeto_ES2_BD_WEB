@@ -72,7 +72,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-text">
-                        <h1 class="name">Fazer caixas do input e back-end para busca comum</h1>
+                        <h1 class="name">Fazer back-end para busca</h1>
                         <hr class="star-light">
                     </div>
                 </div>
@@ -91,9 +91,8 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     <form method="POST" action="submit">
-                        <div class="input_fields_wrap">
-                            <button class="add_field_button list-group-item list-group-item-success" id="AddAtor">Adicionar mais atores</button>
-                            <button class="add_field_button list-group-item list-group-item-success" id="AddIdioma">Adicionar mais idiomas</button>
+                        <div class="input_fields_wrap_ator">
+                            <button class="add_field_button_ator list-group-item list-group-item-success">Adicionar mais atores</button>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="nome">Nome do Ator(a)</label>
@@ -110,17 +109,21 @@
                                         <button class="remove_field list-group-item list-group-item-warning">Remover</button>
                                     </div> -->
                             </div>
+                        </div>
+                        <br>
+                        <div class="input_fields_wrap_idioma">
+                            <button class="add_field_button_idioma list-group-item list-group-item-success">Adicionar mais idiomas</button>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="idioma">Idioma</label>
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            placeholder="Idioma"
-                                            id="idioma"
-                                            name="idioma[]"
-                                            required data-validation-required-message="Please enter a language."
-                                        >
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Idioma"
+                                        id="idioma"
+                                        name="idioma[]"
+                                        required data-validation-required-message="Please enter a language."
+                                    >
                                 </div>
                             </div>
                         </div>
