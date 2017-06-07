@@ -9,11 +9,12 @@ package model;
  *
  * @author ricardo
  */
-public class Actor {
+public class Movie {
     private int id;
     private String name;
-    private char sex;
-    private String character;
+    private String year;
+    private String genres;
+    private String languages;
 
     public int getId() {
         return id;
@@ -31,19 +32,27 @@ public class Actor {
         this.name = name;
     }
 
-    public char getSex() {
-        return sex;
+    public String getYear() {
+        return year;
     }
 
-    public void setSex(char sex) {
-        this.sex = sex;
+    public void setYear(String year) {
+        this.year = year;
     }
 
-    public String getCharacter() {
-        return character;
+    public String getGenres() {
+        return genres;
     }
 
-    public void setCharacter(String character) {
-        this.character = character;
+    public void setGenres(String genres) {
+        this.genres = genres;
+    }
+
+    public String getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(String languages) {
+        this.languages = languages;
     }
 }
