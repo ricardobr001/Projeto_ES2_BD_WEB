@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Vector;
 import model.Actor;
+import model.Movie;
 /**
  *
  * @author ricardo
@@ -74,6 +75,58 @@ public class BuscaAvancadaDAO {
         }
         
         //return;
+    }
+    
+    public void buscaAvancada(Vector res, String[] nomes, String[] idiomas) {
+        ResultSet rs = null;
+        
+        String SQL =    "SELECT mlg.title, mlg.year, mlg.language, mlg.genre, act.name, ma.character " +
+                        "FROM movieactor AS ma " +
+                        "INNER JOIN ( " +
+                        "            SELECT a.actorid, a.name " +
+                        "            FROM actors AS a " +
+                        "            WHERE a.name = '" + nomes[0] + "' OR a.name = '" + nomes[1] + "' " +
+                        "        ) AS act ON act.actorid = ma.actorid " +
+                        "INNER JOIN ( " +
+                        "        	SELECT m.movieid, m.title, m.year, lg.language, gm.genre " +
+                        "        	FROM movie AS m " +
+                        "        	INNER JOIN ( " +
+                        "            		    SELECT lm.movieid, lm.language " +
+                        "            		    FROM languagesmovies AS lm " +
+                        "            		    WHERE lm.language = '" + idiomas[0] +"' OR lm.language = '"+ idiomas[1] + "' " +
+                        "            		) AS lg ON lg.movieid = m.movieid " +
+                        "            INNER JOIN genresmovies AS gm ON gm.movieid = m.movieid " +
+                        "	    ) AS mlg ON mlg.movieid = ma.movieid;";
+        
+        try { 
+            stmt.execute(SQL);
+            rs = stmt.getResultSet();
+
+            /*Enquanto não chegar no fim do select recupera os dados*/
+            while (rs.next()){
+                // 1 - title
+                // 2 - year
+                // 3 - language
+                // 4 - genre
+                // 5 - name
+                // 6 - character
+                Actor a = new Actor();
+                Movie m = new Movie();
+                
+                m.setName(rs.getString(1));
+                m.setYear(rs.getString(2));
+                m.setLanguages(rs.getString(3));
+                m.setGenres(rs.getString(4));
+                a.setName(rs.getString(5));
+                a.setCharacter(rs.getString(6));
+                
+                res.addElement(m);
+                res.addElement(a);
+            }
+        } 
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
     
     public void fecha(){

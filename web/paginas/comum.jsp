@@ -1,4 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import ="java.util.*" %>
+<%@ page import ="model.Actor;" %>
+<%@ page import ="model.Movie;" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -79,7 +82,10 @@
             </div>
         </div>
     </header>
-    
+    <%
+        Vector res = (Vector)request.getAttribute("resultado");
+        if(res.isEmpty()) {
+    %>
     <section id="contact">
         <div class="container">
             <div class="row">
@@ -139,6 +145,47 @@
             </div>
         </div>
     </section>
+    <%
+        } else {
+    %>
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Resultados</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <table class="table table-bordered table-striped table-hover table-condensed table-responsive">
+                <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Ano</th>
+                            <th>Idioma</th>
+                            <th>Gênero</th>
+                            <th>Nome do Ator</th>
+                            <th>Personagem</th>
+                        </tr>
+                </thead>
+                
+                <tbody>
+                    <%/* 
+                        for (i = 0 ; i < res.size() ; i+=2){
+                            out.println("<tr><td>" + res[i].getName + "</td>" +
+                                        "<td>" + res[i].getYear "</td>" + 
+                                        "<td>" + res[i].getLanguages "</td>" + 
+                                        "<td>" + res[i].getGenres "</td>" +
+                                        "<td>" + res[i+1].getName "</td>" + 
+                                        "<td>" + res[i+1].getCharacter "</td></tr>");
+                        }*/
+                    %>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <%
+        }
+    %>
 
     <!-- Footer -->
     <footer class="text-center">

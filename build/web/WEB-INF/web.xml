@@ -4,9 +4,17 @@
         <servlet-name>Ranking</servlet-name>
         <servlet-class>controllers.Ranking</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BuscaAvancada</servlet-name>
+        <servlet-class>controllers.BuscaAvancada</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Ranking</servlet-name>
         <url-pattern>/Ranking</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BuscaAvancada</servlet-name>
+        <url-pattern>/BuscaAvancada</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

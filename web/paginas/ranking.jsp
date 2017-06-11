@@ -91,7 +91,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     <form method="POST" action="submit">
-                        <div class="input_fields_wrap_ator">
+                        <!-- <div class="input_fields_wrap_ator">
                             <button class="add_field_button_ator list-group-item list-group-item-success">Adicionar mais atores</button>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
@@ -104,12 +104,12 @@
                                         name="nome[]"
                                         required data-validation-required-message="Please enter your name."
                                     >
-                                </div>
+                                </div> -->
                                 <!-- <div class="form-group col-xs-3 controls">
                                     <button class="remove_field list-group-item list-group-item-warning">Remover</button>
                                 </div> -->
-                            </div>
-                        </div>
+                            <!-- </div>
+                        </div> -->
                         <div class="row control-group">
                             <div class="form-group col-sm-6">
                                 <label for="genero">Primeiro gênero</label>

@@ -7,16 +7,21 @@ package controllers;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Vector;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Actor;
+import model.Movie;
+import persistence.BuscaAvancadaDAO;
 
 /**
  *
  * @author ricardo
  */
-public class Ranking extends HttpServlet {
+public class BuscaAvancada extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,10 +40,10 @@ public class Ranking extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Ranking</title>");            
+            out.println("<title>Servlet BuscaAvancada</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Ranking at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet BuscaAvancada at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -71,12 +76,23 @@ public class Ranking extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        //String[] nomes;
-        String[] generos;
         
-        //nomes = request.getParameterValues("nome");
-        generos = request.getParameterValues("genero");
+        String[] nomes;
+        String[] idiomas;
         
+        nomes = request.getParameterValues("nome");
+        idiomas = request.getParameterValues("idioma");
+        
+        BuscaAvancadaDAO buscaDAO = new BuscaAvancadaDAO();
+        Vector res = new Vector();
+        //Vector movies = new Vector();
+        
+        buscaDAO.buscaAvancada(res, nomes, idiomas);
+        
+        request.setAttribute("resultado", res);
+        RequestDispatcher rd = null;
+        rd = request.getRequestDispatcher("/comum.jsp");
+        rd.forward(request, response);
         
     }
 
