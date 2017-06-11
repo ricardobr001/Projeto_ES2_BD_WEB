@@ -15,6 +15,7 @@ import java.sql.Statement;
 import java.util.Vector;
 import model.Actor;
 import model.Movie;
+import model.ResultadoBusca;
 /**
  *
  * @author ricardo
@@ -77,8 +78,9 @@ public class BuscaAvancadaDAO {
         //return;
     }
     
-    public void buscaAvancada(Vector res, String[] nomes, String[] idiomas) {
+    public ResultadoBusca buscaAvancada(String[] nomes, String[] idiomas) {
         ResultSet rs = null;
+        ResultadoBusca rb = new ResultadoBusca();
         
         String SQL =    "SELECT mlg.title, mlg.year, mlg.language, mlg.genre, act.name, ma.character " +
                         "FROM movieactor AS ma " +
@@ -120,13 +122,14 @@ public class BuscaAvancadaDAO {
                 a.setName(rs.getString(5));
                 a.setCharacter(rs.getString(6));
                 
-                res.addElement(m);
-                res.addElement(a);
+                rb.popula(a, m);
             }
         } 
         catch (SQLException e) {
             e.printStackTrace();
         }
+        
+        return rb;
     }
     
     public void fecha(){

@@ -1,4 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.*"%>
+<%@page import="model.Actor"%>
+<%@page import="model.Movie"%>
+<%@page import="model.ResultadoBusca"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,13 +18,13 @@
     <title>Buscas IMDb</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="../css/freelancer.min.css" rel="stylesheet">
+    <link href="css/freelancer.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
@@ -54,7 +58,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="../index.jsp">Voltar</a>
+                        <a href="index.jsp">Voltar</a>
                     </li>
                     <!-- <li class="page-scroll">
                         <a href="#about">Sobre</a>
@@ -72,14 +76,17 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-text">
-                        <h1 class="name">Fazer back e preparar front para receber resposta da busca</h1>
+                        <h1 class="name">Fazer back-end para busca</h1>
                         <hr class="star-light">
                     </div>
                 </div>
             </div>
         </div>
     </header>
-
+    <%
+        ResultadoBusca res = (ResultadoBusca)request.getAttribute("ResultadoBusca");
+        if(res.vazio()) {
+    %>
     <section id="contact">
         <div class="container">
             <div class="row">
@@ -91,7 +98,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     <form method="POST" action="submit">
-                        <!-- <div class="input_fields_wrap_ator">
+                        <div class="input_fields_wrap_ator">
                             <button class="add_field_button_ator list-group-item list-group-item-success">Adicionar mais atores</button>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
@@ -103,37 +110,28 @@
                                         id="nome"
                                         name="nome[]"
                                         required data-validation-required-message="Please enter your name."
-                                    >
-                                </div> -->
-                                <!-- <div class="form-group col-xs-3 controls">
-                                    <button class="remove_field list-group-item list-group-item-warning">Remover</button>
-                                </div> -->
-                            <!-- </div>
-                        </div> -->
-                        <div class="row control-group">
-                            <div class="form-group col-sm-6">
-                                <label for="genero">Primeiro gênero</label>
-                                <select class="form-control" id="genero" name="genero[]">
-                                    <option>Escolher</option>
-                                    <option>Action</option>
-                                    <option>Drama</option>
-                                    <option>Terror</option>
-                                    <option>Biography</option>
-                                    <option>History</option>
-                                    <option>Adventure</option>
-                                </select>
+                                    >                                    
+                                </div>                               
+                                    <!-- <div class="form-group col-xs-3 controls">
+                                        <button class="remove_field list-group-item list-group-item-warning">Remover</button>
+                                    </div> -->
                             </div>
-                            <div class="form-group col-sm-6">
-                                <label for="genero">Segundo gênero</label>
-                                <select class="form-control" id="genero" name="genero[]">
-                                    <option>Escolher</option>
-                                    <option>Action</option>
-                                    <option>Drama</option>
-                                    <option>Terror</option>
-                                    <option>Biography</option>
-                                    <option>History</option>
-                                    <option>Adventure</option>
-                                </select>
+                        </div>
+                        <br>
+                        <div class="input_fields_wrap_idioma">
+                            <button class="add_field_button_idioma list-group-item list-group-item-success">Adicionar mais idiomas</button>
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <label for="idioma">Idioma</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Idioma"
+                                        id="idioma"
+                                        name="idioma[]"
+                                        required data-validation-required-message="Please enter a language."
+                                    >
+                                </div>
                             </div>
                         </div>
                         <br>
@@ -148,6 +146,42 @@
             </div>
         </div>
     </section>
+    <%
+        } /*else {*/
+    %>
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Resultados</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <table class="table table-bordered table-striped table-hover table-condensed table-responsive">
+                <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Ano</th>
+                            <th>Idioma</th>
+                            <th>Gênero</th>
+                            <th>Nome do Ator</th>
+                            <th>Personagem</th>
+                        </tr>
+                </thead>
+                
+                <tbody>
+                    <% 
+                        /*for (i = 0 ; i < res.tamanho() ; i+=2){
+                            out.println("<tr>" + res.returnMovie + res.returnActor + "</tr>");
+                        }*/
+                    %>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <%
+        /*}*/
+    %>
 
     <!-- Footer -->
     <footer class="text-center">
@@ -180,21 +214,21 @@
     </div>
 
     <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
     <!-- Contact Form JavaScript -->
-    <script src="../js/jqBootstrapValidation.js"></script>
-    <script src="../js/contact_me.js"></script>
-    <script src="../js/app.js"></script>
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+    <script src="js/app.js"></script>
 
     <!-- Theme JavaScript -->
-    <script src="../js/freelancer.min.js"></script>
+    <script src="js/freelancer.min.js"></script>
 
 </body>
 

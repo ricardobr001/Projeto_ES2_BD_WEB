@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Actor;
 import model.Movie;
+import model.ResultadoBusca;
 import persistence.BuscaAvancadaDAO;
 
 /**
@@ -58,7 +59,7 @@ public class BuscaAvancada extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
+    /*@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
@@ -84,12 +85,13 @@ public class BuscaAvancada extends HttpServlet {
         idiomas = request.getParameterValues("idioma");
         
         BuscaAvancadaDAO buscaDAO = new BuscaAvancadaDAO();
-        Vector res = new Vector();
+        //Vector res = new Vector();
         //Vector movies = new Vector();
         
-        buscaDAO.buscaAvancada(res, nomes, idiomas);
         
-        request.setAttribute("resultado", res);
+        ResultadoBusca res = buscaDAO.buscaAvancada(nomes, idiomas);
+        
+        request.setAttribute("ResultadoBusca", res);
         RequestDispatcher rd = null;
         rd = request.getRequestDispatcher("/comum.jsp");
         rd.forward(request, response);
