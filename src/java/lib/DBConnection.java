@@ -53,7 +53,16 @@ public class DBConnection {
   public void buscaTeste(){
       ResultSet rs = null;
       Vector res = new Vector();
-      String texto = "SELECT * FROM movie LIMIT 100;";
+      String texto = "SELECT COUNT(gm.movieid) AS quantidade, a.name, a.sex\n" +
+"FROM movieactor AS ma\n" +
+"INNER JOIN (\n" +
+"            SELECT gm.movieid\n" +
+"            FROM genresmovies AS gm\n" +
+"            WHERE gm.genre = 'Action' OR gm.genre = 'Horror'\n" +
+"        ) AS gm ON ma.movieid = gm.movieid\n" +
+"INNER JOIN actors AS a ON a.actorid = ma.actorid\n" +
+"GROUP BY a.actorid\n" +
+"ORDER BY quantidade DESC;";
       //System.out.println(texto);
       
       try { 

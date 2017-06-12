@@ -82,7 +82,7 @@
     </header>
     <%
         ResultadoBusca res = (ResultadoBusca)request.getAttribute("ResultadoBusca");
-        if(res.vazio()) {
+        if(res == null) {
     %>
     <section id="contact">
         <div class="container">
@@ -144,7 +144,7 @@
         </div>
     </section>
     <%
-        }// else {
+        } else {
     %>
     <section id="contact">
         <div class="container">
@@ -168,16 +168,16 @@
                 
                 <tbody>
                     <% 
-                        /*for (i = 0 ; i < res.tamanho() ; i+=2){
+                        for (i = 0 ; i < res.tamanho() ; i+=2){
                             out.println("<tr>" + res.returnMovie + res.returnActor + "</tr>");
-                        }*/
+                        }
                     %>
                 </tbody>
             </table>
         </div>
     </section>
     <%
-        //}
+        }
     %>
 
     <!-- Footer -->
