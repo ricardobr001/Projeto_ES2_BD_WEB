@@ -96,7 +96,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-6 portfolio-item">
-                    <a href="comum.jsp" class="portfolio-link">
+                    <a href="BuscaAvancada.jsp" class="portfolio-link">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>

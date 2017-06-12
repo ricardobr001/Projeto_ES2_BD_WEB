@@ -1,8 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="java.util.*"%>
-<%@page import="model.Actor"%>
-<%@page import="model.Movie"%>
-<%@page import="model.ResultadoBusca"%>
+<%@page import="model.*"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -147,7 +144,7 @@
         </div>
     </section>
     <%
-        } /*else {*/
+        }// else {
     %>
     <section id="contact">
         <div class="container">
@@ -180,7 +177,7 @@
         </div>
     </section>
     <%
-        /*}*/
+        //}
     %>
 
     <!-- Footer -->

@@ -59,7 +59,7 @@ public class BuscaAvancada extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    /*@Override
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
@@ -77,13 +77,14 @@ public class BuscaAvancada extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
+        System.out.println("Chegou aqui");
         String[] nomes;
         String[] idiomas;
         
         nomes = request.getParameterValues("nome");
         idiomas = request.getParameterValues("idioma");
         
+        System.out.println("Chegou aqui");
         BuscaAvancadaDAO buscaDAO = new BuscaAvancadaDAO();
         //Vector res = new Vector();
         //Vector movies = new Vector();
@@ -93,7 +94,7 @@ public class BuscaAvancada extends HttpServlet {
         
         request.setAttribute("ResultadoBusca", res);
         RequestDispatcher rd = null;
-        rd = request.getRequestDispatcher("/comum.jsp");
+        rd = request.getRequestDispatcher("/BuscaAvancada.jsp");
         rd.forward(request, response);
         
     }
