@@ -130,7 +130,7 @@
                 
                 <tbody>
                     <% 
-                        for (i = 0 ; i < res.tamanho() ; i+=2){
+                        for (int i = 0 ; i < res.size() ; i++){
                             out.println("<tr>" + res.returnMovie(i) + res.returnActor(i) + "</tr>");
                         }
                     %>

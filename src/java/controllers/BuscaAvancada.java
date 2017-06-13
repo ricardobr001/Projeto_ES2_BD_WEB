@@ -62,7 +62,7 @@ public class BuscaAvancada extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //processRequest(request, response);
         String nome;
         String idioma;
         
@@ -73,8 +73,7 @@ public class BuscaAvancada extends HttpServlet {
         ResultadoBusca res = buscaDAO.buscaAvancada(nome, idioma); 
         
         request.setAttribute("ResultadoBusca", res);
-        RequestDispatcher rd = null;
-        rd = request.getRequestDispatcher("/ResultadoBuscaAvancada.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/ResultadoBuscaAvancada.jsp");
         rd.forward(request, response);
     }
 

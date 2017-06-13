@@ -39,4 +39,8 @@ public class ResultadoBusca {
         return  "<td>" + this.actor.get(i).getName() + "</td>" +
                 "<td>" + this.actor.get(i).getCharacter() + "</td>";
     }
+    
+    public int size(){
+        return this.actor.size();
+    }
 }
