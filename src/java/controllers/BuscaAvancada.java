@@ -63,6 +63,19 @@ public class BuscaAvancada extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        String nome;
+        String idioma;
+        
+        nome = request.getParameter("nome");
+        idioma = request.getParameter("idioma");
+        
+        BuscaAvancadaDAO buscaDAO = new BuscaAvancadaDAO();
+        ResultadoBusca res = buscaDAO.buscaAvancada(nome, idioma); 
+        
+        request.setAttribute("ResultadoBusca", res);
+        RequestDispatcher rd = null;
+        rd = request.getRequestDispatcher("/ResultadoBuscaAvancada.jsp");
+        rd.forward(request, response);
     }
 
     /**
@@ -77,24 +90,26 @@ public class BuscaAvancada extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        System.out.println("Chegou aqui");
-        String[] nomes;
-        String[] idiomas;
+        //System.out.println("Chegou aqui");
+        String nome;
+        String idioma;
         
-        nomes = request.getParameterValues("nome");
-        idiomas = request.getParameterValues("idioma");
+        nome = request.getParameter("nome");
+        idioma = request.getParameter("idioma");
+        System.out.println(request.getParameter("nome"));
+        System.out.println(request.getParameter("idioma"));
         
-        System.out.println("Chegou aqui");
+        //System.out.println("Chegou aqui");
         BuscaAvancadaDAO buscaDAO = new BuscaAvancadaDAO();
         //Vector res = new Vector();
         //Vector movies = new Vector();
         
         
-        ResultadoBusca res = buscaDAO.buscaAvancada(nomes, idiomas);
+        ResultadoBusca res = buscaDAO.buscaAvancada(nome, idioma);
         
         request.setAttribute("ResultadoBusca", res);
         RequestDispatcher rd = null;
-        rd = request.getRequestDispatcher("/BuscaAvancada.jsp");
+        rd = request.getRequestDispatcher("/ResultadoBuscaAvancada.jsp");
         rd.forward(request, response);
         
     }

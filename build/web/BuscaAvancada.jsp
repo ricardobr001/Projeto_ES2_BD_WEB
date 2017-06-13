@@ -1,5 +1,4 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="model.*"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -80,10 +79,7 @@
             </div>
         </div>
     </header>
-    <%
-        ResultadoBusca res = (ResultadoBusca)request.getAttribute("ResultadoBusca");
-        if(res == null) {
-    %>
+    
     <section id="contact">
         <div class="container">
             <div class="row">
@@ -94,7 +90,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <form method="POST" action="submit">
+                    <form method="GET" action="BuscaAvancada">
                         <div class="input_fields_wrap_ator">
                             <button class="add_field_button_ator list-group-item list-group-item-success">Adicionar mais atores</button>
                             <div class="row control-group">
@@ -105,7 +101,7 @@
                                         class="form-control"
                                         placeholder="Nome do ator(a)"
                                         id="nome"
-                                        name="nome[]"
+                                        name="nome"
                                         required data-validation-required-message="Please enter your name."
                                     >                                    
                                 </div>                               
@@ -125,7 +121,7 @@
                                         class="form-control"
                                         placeholder="Idioma"
                                         id="idioma"
-                                        name="idioma[]"
+                                        name="idioma"
                                         required data-validation-required-message="Please enter a language."
                                     >
                                 </div>
@@ -135,7 +131,7 @@
                         <div id="success"></div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Buscar</button>
+                                <button type="submit" value="submit" class="btn btn-success btn-lg">Buscar</button>
                             </div>
                         </div>
                     </form>
@@ -143,42 +139,6 @@
             </div>
         </div>
     </section>
-    <%
-        } else {
-    %>
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Resultados</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <table class="table table-bordered table-striped table-hover table-condensed table-responsive">
-                <thead>
-                        <tr>
-                            <th>Título</th>
-                            <th>Ano</th>
-                            <th>Idioma</th>
-                            <th>Gênero</th>
-                            <th>Nome do Ator</th>
-                            <th>Personagem</th>
-                        </tr>
-                </thead>
-                
-                <tbody>
-                    <% 
-                        for (i = 0 ; i < res.tamanho() ; i+=2){
-                            out.println("<tr>" + res.returnMovie + res.returnActor + "</tr>");
-                        }
-                    %>
-                </tbody>
-            </table>
-        </div>
-    </section>
-    <%
-        }
-    %>
 
     <!-- Footer -->
     <footer class="text-center">

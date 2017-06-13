@@ -78,7 +78,7 @@ public class BuscaAvancadaDAO {
         //return;
     }
     
-    public ResultadoBusca buscaAvancada(String[] nomes, String[] idiomas) {
+    public ResultadoBusca buscaAvancada(String nome, String idioma) {
         ResultSet rs = null;
         ResultadoBusca rb = new ResultadoBusca();
         
@@ -87,7 +87,7 @@ public class BuscaAvancadaDAO {
                         "INNER JOIN ( " +
                         "            SELECT a.actorid, a.name " +
                         "            FROM actors AS a " +
-                        "            WHERE a.name = '" + nomes[0] + "' OR a.name = '" + nomes[1] + "' " +
+                        "            WHERE a.name = '" + nome/* + "' OR a.name = '" + nomes[1] + "' " */+"'"+
                         "        ) AS act ON act.actorid = ma.actorid " +
                         "INNER JOIN ( " +
                         "        	SELECT m.movieid, m.title, m.year, lg.language, gm.genre " +
@@ -95,7 +95,7 @@ public class BuscaAvancadaDAO {
                         "        	INNER JOIN ( " +
                         "            		    SELECT lm.movieid, lm.language " +
                         "            		    FROM languagesmovies AS lm " +
-                        "            		    WHERE lm.language = '" + idiomas[0] +"' OR lm.language = '"+ idiomas[1] + "' " +
+                        "            		    WHERE lm.language = '" + idioma/* +"' OR lm.language = '"+ idiomas[1] + "' " */+"'"+
                         "            		) AS lg ON lg.movieid = m.movieid " +
                         "            INNER JOIN genresmovies AS gm ON gm.movieid = m.movieid " +
                         "	    ) AS mlg ON mlg.movieid = ma.movieid;";
@@ -105,6 +105,7 @@ public class BuscaAvancadaDAO {
             rs = stmt.getResultSet();
 
             /*Enquanto não chegar no fim do select recupera os dados*/
+            int i = 0;
             while (rs.next()){
                 // 1 - title
                 // 2 - year
@@ -122,8 +123,12 @@ public class BuscaAvancadaDAO {
                 a.setName(rs.getString(5));
                 a.setCharacter(rs.getString(6));
                 
+                //System.out.println(m.getName() + "|" + m.getYear() + "|" + m.getLanguages() +"|"+m.getGenres()+"|"+a.getName()+"|"+a.getCharacter());
                 rb.popula(a, m);
+                //System.out.println("Parou depois do popula?");
+                i++;
             }
+            //System.out.println("Parou o while em i = "+ i);
         } 
         catch (SQLException e) {
             e.printStackTrace();

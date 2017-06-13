@@ -5,52 +5,38 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author ricardo
  */
 public class ResultadoBusca {
-    private Actor[] actor;
-    private Movie[] movie;
-    private int size;
+    private ArrayList<Actor> actor;
+    private ArrayList<Movie> movie;
     
     public ResultadoBusca(){
-        this.size = 0;
+        this.actor = new ArrayList();
+        this.movie = new ArrayList();
     }
     
     public void popula(Actor a, Movie m){
-        this.actor[this.size] = new Actor();
-        this.movie[this.size] = new Movie();
-        this.actor[this.size] = a;
-        this.movie[this.size] = m;
-        this.size++;
-    }
-    
-    public int size(){
-        return this.size;
+        //this.actor[this.size] = new Actor();
+        //System.out.println("Parou depois de alocar o actor!");
+        //this.movie[this.size] = new Movie();
+        this.actor.add(a);
+        this.movie.add(m);
     }
     
     public String returnMovie(int i){
-        return  "<td>" + this.movie[i].getName() + "</td>" +
-                "<td>" + this.movie[i].getYear() + "</td>" +
-                "<td>" + this.movie[i].getLanguages() + "</td>" +
-                "<td>" + this.movie[i].getGenres() + "</td>";
+        return  "<td>" + this.movie.get(i).getName() + "</td>" +
+                "<td>" + this.movie.get(i).getYear() + "</td>" +
+                "<td>" + this.movie.get(i).getLanguages() + "</td>" +
+                "<td>" + this.movie.get(i).getGenres() + "</td>";
     }
     
     public String returnActor(int i){
-        return  "<td>" + this.actor[i].getName() + "</td>" +
-                "<td>" + this.actor[i].getCharacter() + "</td>";
-    }
-    
-    public boolean vazio(){
-        if (this.size == 0){
-            return true;
-        }
-        
-        return false;
-    }
-    
-    public int tamanho(){
-        return this.size;
+        return  "<td>" + this.actor.get(i).getName() + "</td>" +
+                "<td>" + this.actor.get(i).getCharacter() + "</td>";
     }
 }
