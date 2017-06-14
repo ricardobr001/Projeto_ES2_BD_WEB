@@ -79,7 +79,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-text">
-                        <h1 class="name">Fazer back-end para busca</h1>
+                        <h1 class="name">Resultados</h1>
                         <hr class="star-light">
                     </div>
                 </div>
@@ -110,12 +110,6 @@
     %>
     <section id="contact">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Resultados</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
             <table class="table table-bordered table-striped table-hover table-condensed table-responsive">
                 <thead>
                         <tr>
