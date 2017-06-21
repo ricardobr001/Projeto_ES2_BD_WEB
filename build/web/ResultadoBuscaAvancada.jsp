@@ -24,7 +24,7 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="css/freelancer.min.css" rel="stylesheet">
+    <link href="css/theme.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -177,11 +177,10 @@
 
     <!-- Contact Form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
     <script src="js/app.js"></script>
 
     <!-- Theme JavaScript -->
-    <script src="js/freelancer.min.js"></script>
+    <script src="js/theme.min.js"></script>
 
 </body>
 
