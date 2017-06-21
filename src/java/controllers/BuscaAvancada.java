@@ -7,6 +7,7 @@ package controllers;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Vector;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -63,11 +64,18 @@ public class BuscaAvancada extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        String nome;
-        String idioma;
+        String[] nome;
+        String[] idioma;
         
-        nome = request.getParameter("nome");
-        idioma = request.getParameter("idioma");
+        nome = request.getParameterValues("nome");
+        idioma = request.getParameterValues("idioma");
+        
+        System.out.println("Primeiro nome: " + nome[0]);
+        //System.out.println("Segundo nome: " + nome[1]);
+        
+        System.out.println("Primeiro idioma: " + idioma[0]);
+        System.out.println("Segundo idioma: " + idioma[1]);
+
         
         BuscaAvancadaDAO buscaDAO = new BuscaAvancadaDAO();
         ResultadoBusca res = buscaDAO.buscaAvancada(nome, idioma); 
@@ -88,7 +96,27 @@ public class BuscaAvancada extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //processRequest(request, response);
+        String[] nome;
+        String[] idioma;
+        System.out.println("POST!!");
+        
+        nome = request.getParameterValues("nome");
+        idioma = request.getParameterValues("idioma");
+        
+        System.out.println("Primeiro nome: " + nome[0]);
+        //System.out.println("Segundo nome: " + nome[1]);
+        
+        System.out.println("Primeiro idioma: " + idioma[0]);
+        System.out.println("Segundo idioma: " + idioma[1]);
+
+        
+        BuscaAvancadaDAO buscaDAO = new BuscaAvancadaDAO();
+        ResultadoBusca res = buscaDAO.buscaAvancada(nome, idioma); 
+        
+        request.setAttribute("ResultadoBusca", res);
+        RequestDispatcher rd = request.getRequestDispatcher("/ResultadoBuscaAvancada.jsp");
+        rd.forward(request, response);
     }
 
     /**

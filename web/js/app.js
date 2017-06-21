@@ -8,7 +8,7 @@ $(document).ready(function() {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(".input_fields_wrap_ator").append('<div class="row control-group"><div class="form-group col-xs-9 floating-label-form-group controls"><label for="nome">Nome do Ator(a)</label><input type="text" class="form-control" placeholder="Nome do ator(a)" id="name" required data-validation-required-message="Please enter your name."></div><div class="form-group col-xs-3 controls"><button class="remove_field list-group-item list-group-item-danger">Remover</button></div></div>'); //add input box
+            $(".input_fields_wrap_ator").append('<div class="row control-group"><div class="form-group col-xs-9 floating-label-form-group controls"><label for="nome">Nome do Ator(a)</label><input type="text" class="form-control" placeholder="Nome do ator(a)" id="nome" name="nome" required data-validation-required-message="Please enter your name."></div><div class="form-group col-xs-3 controls"><button class="remove_field list-group-item list-group-item-danger">Remover</button></div></div>'); //add input box
         }
     });
 
@@ -18,7 +18,7 @@ $(document).ready(function() {
         e.preventDefault();
         if(y < max_fields){ //max input box allowed
             y++; //text box increment
-            $(".input_fields_wrap_idioma").append('<div class="row control-group"><div class="form-group col-xs-9 floating-label-form-group controls"><label for="idioma">Idioma</label><input type="text" class="form-control" placeholder="Idioma" id="idioma" name="idioma[]" required data-validation-required-message="Please enter a language."></div><div class="form-group col-xs-3 controls"><button class="remove_field list-group-item list-group-item-danger">Remover</button></div></div>'); //add input box
+            $(".input_fields_wrap_idioma").append('<div class="row control-group"><div class="form-group col-xs-9 floating-label-form-group controls"><label for="idioma">Idioma</label><input type="text" class="form-control" placeholder="Idioma" id="idioma" name="idioma" required data-validation-required-message="Please enter a language."></div><div class="form-group col-xs-3 controls"><button class="remove_field list-group-item list-group-item-danger">Remover</button></div></div>'); //add input box
         }
     });
 
@@ -43,7 +43,14 @@ $(document).ready(function() {
 /*' <div class="row control-group">
         <div class="form-group col-xs-9 floating-label-form-group controls">
             <label for="nome">Nome do Ator(a)</label>
-            <input type="text" class="form-control" placeholder="Nome do ator(a)" id="name" required data-validation-required-message="Please enter your name.">
+            <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Nome do ator(a)" 
+                id="name"
+                name="nome"
+                required data-validation-required-message="Please enter your name."
+            >
         </div>
         <div class="form-group col-xs-3 controls">
             <button class="remove_field list-group-item list-group-item-danger">Remover</button>
@@ -59,7 +66,7 @@ $(document).ready(function() {
             class="form-control"
             placeholder="Idioma"
             id="idioma"
-            name="idioma[]"
+            name="idioma"
             required data-validation-required-message="Please enter a language."
         >
     </div>

@@ -78,7 +78,7 @@ public class BuscaAvancadaDAO {
         //return;
     }
     
-    public ResultadoBusca buscaAvancada(String nome, String idioma) {
+    public ResultadoBusca buscaAvancada(String[] nome, String[] idioma) {
         ResultSet rs = null;
         ResultadoBusca rb = new ResultadoBusca();
         
@@ -87,16 +87,38 @@ public class BuscaAvancadaDAO {
                         "INNER JOIN ( " +
                         "            SELECT a.actorid, a.name " +
                         "            FROM actors AS a " +
-                        "            WHERE a.name = '" + nome/* + "' OR a.name = '" + nomes[1] + "' " */+"'"+
-                        "        ) AS act ON act.actorid = ma.actorid " +
+                        "            WHERE a.name = ";
+        
+                        /*Laço para montar o SQL dinamicamente*/
+                        for (int i = 0 ; i < nome.length ; i++){
+                            if (i+1 == nome.length){
+                                SQL = SQL + "'" + nome[i] + "'";
+                            }
+                            else {
+                                SQL = SQL + "'" + nome[i] + "' OR a.name = ";
+                            }   
+                        }
+                
+                        SQL = SQL + "        ) AS act ON act.actorid = ma.actorid " +
                         "INNER JOIN ( " +
                         "        	SELECT m.movieid, m.title, m.year, lg.language, gm.genre " +
                         "        	FROM movie AS m " +
                         "        	INNER JOIN ( " +
                         "            		    SELECT lm.movieid, lm.language " +
                         "            		    FROM languagesmovies AS lm " +
-                        "            		    WHERE lm.language = '" + idioma/* +"' OR lm.language = '"+ idiomas[1] + "' " */+"'"+
-                        "            		) AS lg ON lg.movieid = m.movieid " +
+                        "            		    WHERE lm.language = ";/* +"' OR lm.language = '"+ idiomas[1] + "' " */
+                        
+                        /*Laço para montar o SQL dinamicamente*/
+                        for (int i = 0 ; i < idioma.length ; i++){
+                            if (i+1 == idioma.length){
+                                SQL = SQL + "'" + idioma[i] + "'";
+                            }
+                            else {
+                                SQL = SQL + "'" + idioma[i] + "' OR lm.language = ";
+                            }   
+                        }
+                        
+                        SQL = SQL + "            		) AS lg ON lg.movieid = m.movieid " +
                         "            INNER JOIN genresmovies AS gm ON gm.movieid = m.movieid " +
                         "	    ) AS mlg ON mlg.movieid = ma.movieid;";
         

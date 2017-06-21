@@ -56,9 +56,6 @@
                     <li class="page-scroll">
                         <a href="index.jsp">Voltar</a>
                     </li>
-                    <!-- <li class="page-scroll">
-                        <a href="#about">Sobre</a>
-                    </li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -90,7 +87,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <form method="GET" action="BuscaAvancada">
+                    <form method="POST" action="BuscaAvancada">
                         <div class="input_fields_wrap_ator">
                             <button class="add_field_button_ator list-group-item list-group-item-success">Adicionar mais atores</button>
                             <div class="row control-group">
@@ -103,7 +100,7 @@
                                         id="nome"
                                         name="nome"
                                         required data-validation-required-message="Please enter your name."
-                                    >                                    
+                                    >                                     
                                 </div>                               
                                     <!-- <div class="form-group col-xs-3 controls">
                                         <button class="remove_field list-group-item list-group-item-warning">Remover</button>
