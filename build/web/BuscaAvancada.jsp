@@ -87,7 +87,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <form method="POST" action="BuscaAvancada">
+                    <form method="GET" action="BuscaAvancada">
                         <div class="input_fields_wrap_ator">
                             <button class="add_field_button_ator list-group-item list-group-item-success">Adicionar mais atores</button>
                             <div class="row control-group">

@@ -70,13 +70,6 @@ public class BuscaAvancada extends HttpServlet {
         nome = request.getParameterValues("nome");
         idioma = request.getParameterValues("idioma");
         
-        System.out.println("Primeiro nome: " + nome[0]);
-        //System.out.println("Segundo nome: " + nome[1]);
-        
-        System.out.println("Primeiro idioma: " + idioma[0]);
-        System.out.println("Segundo idioma: " + idioma[1]);
-
-        
         BuscaAvancadaDAO buscaDAO = new BuscaAvancadaDAO();
         ResultadoBusca res = buscaDAO.buscaAvancada(nome, idioma); 
         
@@ -97,11 +90,18 @@ public class BuscaAvancada extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        String[] nome;
-        String[] idioma;
+        String nome;
+        String nome2;
+        String idioma;
         System.out.println("POST!!");
         
-        nome = request.getParameterValues("nome");
+        nome = request.getParameter("nome");
+        nome2 = request.getParameter("nome2");
+        
+        System.out.println("Primeiro nome: " + nome);
+        System.out.println("Segundo nome: " + nome2);
+        
+        /*nome = request.getParameterValues("nome");
         idioma = request.getParameterValues("idioma");
         
         System.out.println("Primeiro nome: " + nome[0]);
@@ -116,7 +116,9 @@ public class BuscaAvancada extends HttpServlet {
         
         request.setAttribute("ResultadoBusca", res);
         RequestDispatcher rd = request.getRequestDispatcher("/ResultadoBuscaAvancada.jsp");
-        rd.forward(request, response);
+        rd.forward(request, response);*/
+        
+        
     }
 
     /**

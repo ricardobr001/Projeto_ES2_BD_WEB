@@ -47,7 +47,7 @@ $(document).ready(function() {
                 type="text" 
                 class="form-control" 
                 placeholder="Nome do ator(a)" 
-                id="name"
+                id="nome"
                 name="nome"
                 required data-validation-required-message="Please enter your name."
             >
