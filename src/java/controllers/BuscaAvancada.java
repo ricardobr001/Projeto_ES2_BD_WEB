@@ -89,28 +89,6 @@ public class BuscaAvancada extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        //System.out.println("Chegou aqui");
-        String nome;
-        String idioma;
-        
-        nome = request.getParameter("nome");
-        idioma = request.getParameter("idioma");
-        System.out.println(request.getParameter("nome"));
-        System.out.println(request.getParameter("idioma"));
-        
-        //System.out.println("Chegou aqui");
-        BuscaAvancadaDAO buscaDAO = new BuscaAvancadaDAO();
-        //Vector res = new Vector();
-        //Vector movies = new Vector();
-        
-        
-        ResultadoBusca res = buscaDAO.buscaAvancada(nome, idioma);
-        
-        request.setAttribute("ResultadoBusca", res);
-        RequestDispatcher rd = null;
-        rd = request.getRequestDispatcher("/ResultadoBuscaAvancada.jsp");
-        rd.forward(request, response);
-        
     }
 
     /**
