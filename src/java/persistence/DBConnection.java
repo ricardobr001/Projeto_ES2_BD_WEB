@@ -20,8 +20,8 @@ public class DBConnection {
     public DBConnection(){
         try {
             Class.forName("org.postgresql.Driver").newInstance();
-            String connection="jdbc:postgresql://localhost:5432/banco_projeto";
-            String user="postgres", password="1234";
+            String connection="jdbc:postgresql://localhost:5433/banco";
+            String user="postgres", password="senha";
             
             conn = DriverManager.getConnection(connection, user, password);
             stmt = conn.createStatement();

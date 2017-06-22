@@ -54,7 +54,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio">Buscas</a>
+                        <a href="#buscas">Buscas</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#about">Sobre</a>
@@ -71,11 +71,10 @@
         <div class="container" id="maincontent" tabindex="-1">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="img/imdb.png" alt="">
+                    <img class="img-responsive" src="img/imdb.png" alt="IMDB Logo">
                     <div class="intro-text">
                         <h1 class="name">Projeto Integrado</h1>
                         <hr class="star-light">
-                        <p>Disciplinas envolvidas:</p>
                         <p>Desenvolvimento Web</p>
                         <p>Laboratório de Banco de Dados</p>
                         <p>Engenharia de Software</p>
@@ -86,7 +85,7 @@
     </header>
 
     <!-- Portfolio Grid Section -->
-    <section id="portfolio">
+    <section id="buscas">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -102,9 +101,10 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/foto.jpg" class="img-responsive" alt="Cabin">
+                        <img src="img/foto.jpg" class="img-responsive center-block" alt="Imagem Busca">
                     </a>
-                    <p class="text-center">Busca Avancada</p>
+                    <br>
+                    <p class="text-center">Busca Avançada</p>
                 </div>
                 <div class="col-sm-6 portfolio-item">
                     <a href="ranking.jsp" class="portfolio-link">
@@ -113,8 +113,9 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/podio.jpg" class="img-responsive" alt="Slice of cake">
+                        <img src="img/podio.jpg" class="img-responsive center-block" alt="Imagem Ranking">
                     </a>
+                    <br>
                     <p class="text-center">Ranking</p>
                 </div>
             </div>
@@ -150,7 +151,7 @@
                             <p class="small">Carlos Alberico Bezerra de Andrade</p>
                             <p class="small">Gustavo Leite Oliveira</p>
                             <p class="small">Isabela Salmeron Boschi</p>
-                            <p class="small">Luciane da Lopes Silva</p>
+                            <p class="small">Luciane da Silva Lopes</p>
                             <p class="small">Ricardo Mendes Leal Junior</p>
                     </div>
                     <div class="footer-col col-md-6">

@@ -1,9 +1,3 @@
-<%-- 
-    Document   : ResultadoRanking
-    Created on : 21/06/2017, 21:35:51
-    Author     : ricardo
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="model.*"%>
 

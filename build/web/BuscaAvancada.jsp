@@ -92,7 +92,7 @@
                             <button class="add_field_button_ator list-group-item list-group-item-success">Adicionar mais atores</button>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label for="nome">Nome do Ator(a)</label>
+                                    <label for="nome">Nome do Ator/Atriz</label>
                                     <input
                                         type="text"
                                         class="form-control"
@@ -144,7 +144,7 @@
                             <p class="small">Carlos Alberico Bezerra de Andrade</p>
                             <p class="small">Gustavo Leite Oliveira</p>
                             <p class="small">Isabela Salmeron Boschi</p>
-                            <p class="small">Luciane da Lopes Silva</p>
+                            <p class="small">Luciane da Silva Lopes</p>
                             <p class="small">Ricardo Mendes Leal Junior</p>
                     </div>
                     <div class="footer-col col-md-6">

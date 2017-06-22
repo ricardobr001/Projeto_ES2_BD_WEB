@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controllers;
 
 import java.io.IOException;
@@ -19,10 +14,6 @@ import model.Movie;
 import model.ResultadoBusca;
 import persistence.BuscaAvancadaDAO;
 
-/**
- *
- * @author ricardo
- */
 public class BuscaAvancada extends HttpServlet {
 
     /**
@@ -51,7 +42,6 @@ public class BuscaAvancada extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -63,7 +53,7 @@ public class BuscaAvancada extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
+        
         String[] nome;
         String[] idioma;
         
@@ -71,7 +61,7 @@ public class BuscaAvancada extends HttpServlet {
         idioma = request.getParameterValues("idioma");
         
         BuscaAvancadaDAO buscaDAO = new BuscaAvancadaDAO();
-        ResultadoBusca res = buscaDAO.buscaAvancada(nome, idioma); 
+        ResultadoBusca res = buscaDAO.buscaAvancada(nome, idioma);
         
         request.setAttribute("ResultadoBusca", res);
         RequestDispatcher rd = request.getRequestDispatcher("/ResultadoBuscaAvancada.jsp");
@@ -89,7 +79,7 @@ public class BuscaAvancada extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
+        
         String nome;
         String nome2;
         String idioma;

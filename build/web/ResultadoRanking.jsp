@@ -1,9 +1,3 @@
-<%-- 
-    Document   : ResultadoRanking
-    Created on : 21/06/2017, 21:35:51
-    Author     : ricardo
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="model.*"%>
 
@@ -144,7 +138,7 @@
                             <p class="small">Carlos Alberico Bezerra de Andrade</p>
                             <p class="small">Gustavo Leite Oliveira</p>
                             <p class="small">Isabela Salmeron Boschi</p>
-                            <p class="small">Luciane da Lopes Silva</p>
+                            <p class="small">Luciane da Silva Lopes</p>
                             <p class="small">Ricardo Mendes Leal Junior</p>
                     </div>
                     <div class="footer-col col-md-6">

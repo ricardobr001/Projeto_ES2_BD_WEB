@@ -1,9 +1,3 @@
-<%-- 
-    Document   : ResultadoBuscaAvancada
-    Created on : 13/06/2017, 15:13:48
-    Author     : ricardo
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="model.*"%>
 

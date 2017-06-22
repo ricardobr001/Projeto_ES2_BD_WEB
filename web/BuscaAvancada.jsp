@@ -92,7 +92,7 @@
                             <button class="add_field_button_ator list-group-item list-group-item-success">Adicionar mais atores</button>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label for="nome">Nome do Ator(a)</label>
+                                    <label for="nome">Nome do Ator/Atriz</label>
                                     <input
                                         type="text"
                                         class="form-control"

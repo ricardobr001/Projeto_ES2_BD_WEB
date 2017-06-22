@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package persistence;
 
 import java.sql.ResultSet;
@@ -10,10 +5,7 @@ import java.sql.SQLException;
 import model.Actor;
 import model.Movie;
 import model.ResultadoBusca;
-/**
- *
- * @author ricardo
- */
+
 public class BuscaAvancadaDAO {
     private DBConnection banco;
     
@@ -44,12 +36,12 @@ public class BuscaAvancadaDAO {
                 
                         SQL = SQL + "        ) AS act ON act.actorid = ma.actorid " +
                         "INNER JOIN ( " +
-                        "        	SELECT m.movieid, m.title, m.year, lg.language, gm.genre " +
+                        "        	SELECT m.movieid, m.title, m.year, lg.language, g.genre " +
                         "        	FROM movie AS m " +
                         "        	INNER JOIN ( " +
-                        "            		    SELECT lm.movieid, lm.language " +
-                        "            		    FROM languagesmovies AS lm " +
-                        "            		    WHERE lm.language = ";/* +"' OR lm.language = '"+ idiomas[1] + "' " */
+                        "            		    SELECT lm.movieid, lang.language " +
+                        "            		    FROM languagesmovies AS lm, languages AS lang " +
+                        "            		    WHERE lang.language = ";
                         
                         /*Laço para montar o SQL dinamicamente*/
                         for (int i = 0 ; i < idioma.length ; i++){
@@ -57,12 +49,13 @@ public class BuscaAvancadaDAO {
                                 SQL = SQL + "'" + idioma[i] + "'";
                             }
                             else {
-                                SQL = SQL + "'" + idioma[i] + "' OR lm.language = ";
+                                SQL = SQL + "'" + idioma[i] + "' OR lang.language = ";
                             }   
                         }
                         
                         SQL = SQL + "            		) AS lg ON lg.movieid = m.movieid " +
                         "            INNER JOIN genresmovies AS gm ON gm.movieid = m.movieid " +
+                        "            INNER JOIN genres AS g ON g.genreid = gm.genreid " +
                         "	    ) AS mlg ON mlg.movieid = ma.movieid;";
         
         try { 

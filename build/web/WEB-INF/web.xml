@@ -8,6 +8,10 @@
         <servlet-name>BuscaAvancada</servlet-name>
         <servlet-class>controllers.BuscaAvancada</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Teste</servlet-name>
+        <servlet-class>controllers.Teste</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Ranking</servlet-name>
         <url-pattern>/Ranking</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>BuscaAvancada</servlet-name>
         <url-pattern>/BuscaAvancada</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Teste</servlet-name>
+        <url-pattern>/Teste</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
