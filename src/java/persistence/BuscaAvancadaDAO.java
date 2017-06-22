@@ -21,37 +21,6 @@ public class BuscaAvancadaDAO {
         this.banco = new DBConnection();
     }
     
-//    public void busca() /*throws SQLException */{
-//        ResultSet rs = null;
-//        
-//        /*Código do tutorial abaixo e ele usa o throws*/
-//        //String SQL = "SELECT * FROM movie LIMIT 100;";
-//        //stmt = conn.prepareStatement(SQL);
-//        
-//        /*Sahudy*/
-//        //SQL para testar o select
-//        String SQL = "SELECT * FROM movie LIMIT 100;";
-//        try { 
-//            stmt.execute(SQL);
-//           //System.out.println("Depois do stmt.execute");
-//            rs = stmt.getResultSet();
-//
-//            /*Enquanto não chegar no fim do select recupera os dados*/
-//            while (rs.next()){
-//                // 1 - movieid
-//                // 2 - title
-//                // 3 - year
-//                System.out.println(rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3));
-//                //System.out.println(rs);
-//            }
-//        } 
-//        catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        
-//        //return;
-//    }
-    
     public ResultadoBusca buscaAvancada(String[] nome, String[] idioma) {
         ResultSet rs = null;
         ResultadoBusca rb = new ResultadoBusca();
@@ -119,12 +88,8 @@ public class BuscaAvancadaDAO {
                 a.setName(rs.getString(5));
                 a.setCharacter(rs.getString(6));
                 
-                //System.out.println(m.getName() + "|" + m.getYear() + "|" + m.getLanguages() +"|"+m.getGenres()+"|"+a.getName()+"|"+a.getCharacter());
                 rb.popula(a, m);
-                //System.out.println("Parou depois do popula?");
-                i++;
             }
-            //System.out.println("Parou o while em i = "+ i);
         } 
         catch (SQLException e) {
             e.printStackTrace();
@@ -132,21 +97,4 @@ public class BuscaAvancadaDAO {
         
         return rb;
     }
-    
-//    public void fecha(){
-//        try {
-//            banco.conn.close();
-//        } catch (Exception e){
-//            e.printStackTrace();
-//        }
-//    }
-    
-    /*Teste de conexão com o banco*/
-    /*public static void main(String args[]) {
-        BuscaAvancadaDAO t = new BuscaAvancadaDAO();
-        t.busca();
-        t.fecha();
-
-        //Executar esse arquivo para testar a conexão com o banco shit + F6
-    }*/
 }
