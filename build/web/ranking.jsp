@@ -90,49 +90,76 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <form method="POST" action="submit">
-                        <!-- <div class="input_fields_wrap_ator">
-                            <button class="add_field_button_ator list-group-item list-group-item-success">Adicionar mais atores</button>
-                            <div class="row control-group">
-                                <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label for="nome">Nome do Ator(a)</label>
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        placeholder="Nome do ator(a)"
-                                        id="nome"
-                                        name="nome[]"
-                                        required data-validation-required-message="Please enter your name."
-                                    >
-                                </div> -->
-                                <!-- <div class="form-group col-xs-3 controls">
-                                    <button class="remove_field list-group-item list-group-item-warning">Remover</button>
-                                </div> -->
-                            <!-- </div>
-                        </div> -->
+                    <form method="GET" action="Ranking">
                         <div class="row control-group">
                             <div class="form-group col-sm-6">
                                 <label for="genero">Primeiro gênero</label>
-                                <select class="form-control" id="genero" name="genero[]">
+                                <select class="form-control" id="genero" name="genero1">
                                     <option>Escolher</option>
                                     <option>Action</option>
-                                    <option>Drama</option>
-                                    <option>Terror</option>
-                                    <option>Biography</option>
-                                    <option>History</option>
+                                    <option>Adult</option>
                                     <option>Adventure</option>
+                                    <option>Animation</option>
+                                    <option>Biography</option>
+                                    <option>Comedy</option>
+                                    <option>Crime</option>
+                                    <option>Documentary</option>
+                                    <option>Drama</option>
+                                    <option>Family</option>
+                                    <option>Fantasy</option>
+                                    <option>Film-Noir</option>
+                                    <option>Game-Show</option>
+                                    <option>History</option>
+                                    <option>Horror</option>
+                                    <option>Lifestyle</option>
+                                    <option>Music</option>
+                                    <option>Musical</option>
+                                    <option>Mystery</option>
+                                    <option>News</option>
+                                    <option>Reality-TV</option>
+                                    <option>Romance</option>
+                                    <option>Sci-Fi</option>
+                                    <option>Short</option>
+                                    <option>Sport</option>
+                                    <option>Talk-Show</option>
+                                    <option>Thriller</option>
+                                    <option>War</option>
+                                    <option>Western</option>
                                 </select>
                             </div>
                             <div class="form-group col-sm-6">
                                 <label for="genero">Segundo gênero</label>
-                                <select class="form-control" id="genero" name="genero[]">
+                                <select class="form-control" id="genero" name="genero2">
                                     <option>Escolher</option>
                                     <option>Action</option>
-                                    <option>Drama</option>
-                                    <option>Terror</option>
-                                    <option>Biography</option>
-                                    <option>History</option>
+                                    <option>Adult</option>
                                     <option>Adventure</option>
+                                    <option>Animation</option>
+                                    <option>Biography</option>
+                                    <option>Comedy</option>
+                                    <option>Crime</option>
+                                    <option>Documentary</option>
+                                    <option>Drama</option>
+                                    <option>Family</option>
+                                    <option>Fantasy</option>
+                                    <option>Film-Noir</option>
+                                    <option>Game-Show</option>
+                                    <option>History</option>
+                                    <option>Horror</option>
+                                    <option>Lifestyle</option>
+                                    <option>Music</option>
+                                    <option>Musical</option>
+                                    <option>Mystery</option>
+                                    <option>News</option>
+                                    <option>Reality-TV</option>
+                                    <option>Romance</option>
+                                    <option>Sci-Fi</option>
+                                    <option>Short</option>
+                                    <option>Sport</option>
+                                    <option>Talk-Show</option>
+                                    <option>Thriller</option>
+                                    <option>War</option>
+                                    <option>Western</option>
                                 </select>
                             </div>
                         </div>
@@ -140,7 +167,7 @@
                         <div id="success"></div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Buscar</button>
+                                <button type="submit" value="submit" class="btn btn-success btn-lg">Buscar</button>
                             </div>
                         </div>
                     </form>

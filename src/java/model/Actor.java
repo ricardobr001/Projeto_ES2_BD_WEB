@@ -12,7 +12,7 @@ package model;
 public class Actor {
     private int id;
     private String name;
-    private char sex;
+    private String sex;
     private String character;
 
     public int getId() {
@@ -31,11 +31,11 @@ public class Actor {
         this.name = name;
     }
 
-    public char getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(char sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 

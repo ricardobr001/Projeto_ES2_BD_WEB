@@ -21,9 +21,6 @@ public class ResultadoBusca {
     }
     
     public void popula(Actor a, Movie m){
-        //this.actor[this.size] = new Actor();
-        //System.out.println("Parou depois de alocar o actor!");
-        //this.movie[this.size] = new Movie();
         this.actor.add(a);
         this.movie.add(m);
     }

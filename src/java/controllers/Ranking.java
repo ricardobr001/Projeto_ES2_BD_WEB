@@ -7,10 +7,13 @@ package controllers;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.ResultadoRanking;
+import persistence.RankingDAO;
 
 /**
  *
@@ -56,7 +59,19 @@ public class Ranking extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //processRequest(request, response);
+        String genero1;
+        String genero2;
+        
+        genero1 = request.getParameter("genero1");
+        genero2 = request.getParameter("genero2");
+        
+        RankingDAO rDAO = new RankingDAO();
+        ResultadoRanking res = rDAO.Ranking(genero1, genero2);
+        
+        request.setAttribute("ResultadoRanking", res);
+        RequestDispatcher rd = request.getRequestDispatcher("/ResultadoRanking.jsp");
+        rd.forward(request, response);
     }
 
     /**
@@ -70,14 +85,7 @@ public class Ranking extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-        //String[] nomes;
-        String[] generos;
-        
-        //nomes = request.getParameterValues("nome");
-        generos = request.getParameterValues("genero");
-        
-        
+        processRequest(request, response);  
     }
 
     /**

@@ -102,9 +102,6 @@
                                         required data-validation-required-message="Please enter your name."
                                     >                                     
                                 </div>                               
-                                    <!-- <div class="form-group col-xs-3 controls">
-                                        <button class="remove_field list-group-item list-group-item-warning">Remover</button>
-                                    </div> -->
                             </div>
                         </div>
                         <br>

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : ResultadoBuscaAvancada
-    Created on : 13/06/2017, 15:13:48
+    Document   : ResultadoRanking
+    Created on : 21/06/2017, 21:35:51
     Author     : ricardo
 --%>
 
@@ -86,8 +86,9 @@
             </div>
         </div>
     </header>
+
     <%
-        ResultadoBusca res = (ResultadoBusca)request.getAttribute("ResultadoBusca");
+        ResultadoRanking res = (ResultadoRanking)request.getAttribute("ResultadoRanking");
         if(res == null) {
     %>
     <section id="contact">
@@ -108,24 +109,22 @@
     <%
         } else {
     %>
+
     <section id="contact">
         <div class="container">
             <table class="table table-bordered table-striped table-hover table-condensed table-responsive">
                 <thead>
                         <tr>
-                            <th>Título</th>
-                            <th>Ano</th>
-                            <th>Idioma</th>
-                            <th>Gênero</th>
+                            <th>Quantidade de filmes</th>
                             <th>Nome do Ator</th>
-                            <th>Personagem</th>
+                            <th>Sexo</th>
                         </tr>
                 </thead>
                 
                 <tbody>
                     <% 
                         for (int i = 0 ; i < res.size() ; i++){
-                            out.println("<tr>" + res.returnMovie(i) + res.returnActor(i) + "</tr>");
+                            out.println("<tr>" + res.returnDados(i) + "</tr>");
                         }
                     %>
                 </tbody>
@@ -135,7 +134,6 @@
     <%
         }
     %>
-
     <!-- Footer -->
     <footer class="text-center">
         <div class="footer-above">
