@@ -56,12 +56,14 @@ public class BuscaAvancada extends HttpServlet {
         
         String[] nome;
         String[] idioma;
+        String pagina;
         
         nome = request.getParameterValues("nome");
         idioma = request.getParameterValues("idioma");
+        pagina = request.getParameter("pg");
         
         BuscaAvancadaDAO buscaDAO = new BuscaAvancadaDAO();
-        ResultadoBusca res = buscaDAO.buscaAvancada(nome, idioma);
+        ResultadoBusca res = buscaDAO.buscaAvancada(nome, idioma, pagina);
         
         request.setAttribute("ResultadoBusca", res);
         RequestDispatcher rd = request.getRequestDispatcher("/ResultadoBuscaAvancada.jsp");

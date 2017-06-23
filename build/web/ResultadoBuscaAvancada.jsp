@@ -124,6 +124,25 @@
                     %>
                 </tbody>
             </table>
+            <div class="text-center">
+                <%
+                    String url = request.getQueryString();
+                    String pagina = request.getParameter("pg");
+                    String aux = "&pg=" + pagina;
+                    String url2 = url.replace(aux, "");
+
+                    out.println("<ul class=\"pagination\">");
+                    for (int i = 1; i < res.size(); i++) {
+                        if (Integer.parseInt(pagina) == i) {
+                            out.println("<li class=\"page-item active\"><a class=\"page-link\" href=BuscaAvancada?" + request.getQueryString() + "&pg=" + i + ">" + i + "</a></li>");
+
+                        }
+                        else {
+                            out.println("<li class=\"page-item\"><a class=\"page-link\" href=BuscaAvancada?" + url2 + "&pg=" + i + ">" + i + "</a></li>");
+                        }
+                    }
+                %>
+            </div>
         </div>
     </section>
     <%

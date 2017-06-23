@@ -13,9 +13,15 @@ public class BuscaAvancadaDAO {
         this.banco = new DBConnection();
     }
     
-    public ResultadoBusca buscaAvancada(String[] nome, String[] idioma) {
+    public ResultadoBusca buscaAvancada(String[] nome, String[] idioma, String pagina) {
         ResultSet rs = null;
         ResultadoBusca rb = new ResultadoBusca();
+        int offset = 0;
+
+        if (pagina != null) {
+            offset = (Integer.parseInt(pagina) - 1) * 10;
+        }
+
         
         String SQL =    "SELECT mlg.title, mlg.year, mlg.language, mlg.genre, act.name, ma.character " +
                         "FROM movieactor AS ma " +
@@ -56,7 +62,9 @@ public class BuscaAvancadaDAO {
                         SQL = SQL + "            		) AS lg ON lg.movieid = m.movieid " +
                         "            INNER JOIN genresmovies AS gm ON gm.movieid = m.movieid " +
                         "            INNER JOIN genres AS g ON g.genreid = gm.genreid " +
-                        "	    ) AS mlg ON mlg.movieid = ma.movieid;";
+                        "	    ) AS mlg ON mlg.movieid = ma.movieid " +
+                        "LIMIT 10 " +
+                        "OFFSET " + offset + ";";
         
         try { 
             banco.stmt.execute(SQL);
