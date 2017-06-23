@@ -63,7 +63,7 @@ public class BuscaAvancadaDAO {
                         "            INNER JOIN genresmovies AS gm ON gm.movieid = m.movieid " +
                         "            INNER JOIN genres AS g ON g.genreid = gm.genreid " +
                         "	    ) AS mlg ON mlg.movieid = ma.movieid " +
-                        "LIMIT 10 " +
+                        "LIMIT 30 " +
                         "OFFSET " + offset + ";";
         
         try { 

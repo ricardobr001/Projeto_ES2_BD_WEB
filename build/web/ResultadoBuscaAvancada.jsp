@@ -135,10 +135,12 @@
                     String aux = "&pg=" + pagina;
                     url = url.replace(aux, "");
 
+                    out.println("num tuplas: " + res.size());
+
                     out.println("<ul class=\"pagination\">");
-                    for (int i = 1; i < res.size(); i++) {
+                    for (int i = 1; i < res.size()-1; i++) {
                         if (Integer.parseInt(pagina) == i) {
-                            out.println("<li class=\"page-item active\"><a class=\"page-link\" href=BuscaAvancada?" + request.getQueryString() + "&pg=" + i + ">" + i + "</a></li>");
+                            out.println("<li class=\"page-item active\"><a class=\"page-link\" href=BuscaAvancada?" + url + "&pg=" + i + ">" + i + "</a></li>");
 
                         }
                         else {

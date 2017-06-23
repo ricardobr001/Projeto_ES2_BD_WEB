@@ -3,8 +3,8 @@ package model;
 import java.util.ArrayList;
 
 public class ResultadoBusca {
-    private ArrayList<Actor> actor;
-    private ArrayList<Movie> movie;
+    public ArrayList<Actor> actor;
+    public ArrayList<Movie> movie;
     
     public ResultadoBusca(){
         this.actor = new ArrayList();
