@@ -102,7 +102,7 @@
     <%
         } else {
     %>
-    <section id="contact">
+    <section id="resultados">
         <div class="container">
             <table class="table table-bordered table-striped table-hover table-condensed table-responsive">
                 <thead>
@@ -128,8 +128,12 @@
                 <%
                     String url = request.getQueryString();
                     String pagina = request.getParameter("pg");
+
+                    if (pagina == null)
+                        pagina = "1";
+
                     String aux = "&pg=" + pagina;
-                    String url2 = url.replace(aux, "");
+                    url = url.replace(aux, "");
 
                     out.println("<ul class=\"pagination\">");
                     for (int i = 1; i < res.size(); i++) {
@@ -138,7 +142,7 @@
 
                         }
                         else {
-                            out.println("<li class=\"page-item\"><a class=\"page-link\" href=BuscaAvancada?" + url2 + "&pg=" + i + ">" + i + "</a></li>");
+                            out.println("<li class=\"page-item\"><a class=\"page-link\" href=BuscaAvancada?" + url + "&pg=" + i + ">" + i + "</a></li>");
                         }
                     }
                 %>
