@@ -11,7 +11,7 @@ public class DBConnection {
     public DBConnection(){
         try {
             Class.forName("org.postgresql.Driver").newInstance();
-            String connection="jdbc:postgresql://localhost:5433/banco";
+            String connection="jdbc:postgresql://localhost:5432/projeto";
             String user="usuario_comum", password="usuario";
             
             conn = DriverManager.getConnection(connection, user, password);
