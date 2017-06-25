@@ -25,16 +25,17 @@ public class RankingDAO {
         ResultSet rs = null;
         ResultadoRanking rr = new ResultadoRanking();
         
-        String SQL =    "SELECT COUNT(gm.movieid) AS quantidade, a.name, a.sex " +
-                        "FROM movieactor AS ma " +
-                        "INNER JOIN ( " +
-                        "            SELECT gm.movieid " +
-                        "            FROM genresmovies AS gm, genres AS g " +
-                        "            WHERE g.genre = '" + g1 + "' OR g.genre = '" + g2 + "' " +
-                        "        ) AS gm ON ma.movieid = gm.movieid " +
-                        "INNER JOIN actors AS a ON a.actorid = ma.actorid " +
-                        "GROUP BY a.actorid " +
-                        "ORDER BY quantidade DESC;";
+        String SQL =  "SELECT COUNT (gm.movieid) AS quantidade, a.name, a.sex " +
+                    "FROM movieactor AS ma " +
+                    "INNER JOIN ( " +
+                    "		SELECT gm.movieid " +
+                    "		FROM genresmovies AS gm, genres AS g " +
+                    "		WHERE g.genreid = gm.genreid " +
+                    "		AND (g.genre = '" + g1 + "' OR g.genre = '" + g2 + "') " +
+                    "	) AS gm ON ma.movieid = gm.movieid " +
+                    "INNER JOIN actors AS a ON a.actorid = ma.actorid " +
+                    "GROUP BY a.actorid " +
+                    "ORDER BY quantidade DESC;";
         
         try { 
             banco.stmt.execute(SQL);
