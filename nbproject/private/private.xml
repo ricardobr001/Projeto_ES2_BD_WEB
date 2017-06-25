@@ -2,6 +2,11 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Luciane/Documents/Projeto_ES2_BD_WEB/src/java/controllers/Ranking.java</file>
+            <file>file:/C:/Users/Luciane/Documents/Projeto_ES2_BD_WEB/src/java/controllers/BuscaAvancada.java</file>
+            <file>file:/C:/Users/Luciane/Documents/Projeto_ES2_BD_WEB/src/java/persistence/BuscaAvancadaDAO.java</file>
+            <file>file:/C:/Users/Luciane/Documents/Projeto_ES2_BD_WEB/src/java/persistence/RankingDAO.java</file>
+        </group>
     </open-files>
 </project-private>
