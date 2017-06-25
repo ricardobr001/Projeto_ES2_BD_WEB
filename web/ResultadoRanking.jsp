@@ -104,7 +104,7 @@
         } else {
     %>
 
-    <section id="contact">
+    <section id="resultados">
         <div class="container">
             <table class="table table-bordered table-striped table-hover table-condensed table-responsive">
                 <thead>
@@ -123,6 +123,39 @@
                     %>
                 </tbody>
             </table>
+            <div class="text-center">
+                <%
+                    String url = request.getQueryString();
+                    String pagina = request.getParameter("pg");
+                    int numPagina, proxPagina, antPagina;
+
+                    if (pagina != null) {
+                        numPagina = Integer.parseInt(pagina);
+                    }
+                    else {
+                        numPagina = 1;
+                    }
+
+                    String aux = "&pg=" + numPagina;
+                    url = url.replace(aux, "");
+
+                    out.println("<ul class=\"pager\">");
+
+                    if (numPagina == 1 && res.size() == 30) {
+                        out.println("<li class=\"page-item\"><a class=\"page-link\" href=Ranking?" + url + "&pg=2#resultados>Próximo</a></li>");
+                    }
+                    else if (res.size() < 30) {
+                        antPagina = numPagina-1;
+                        out.println("<li class=\"page-item\"><a class=\"page-link\" href=Ranking?" + url + "&pg=" + antPagina + "#resultados>Anterior</a></li>");
+                    }
+                    else {
+                        proxPagina = numPagina+1;
+                        antPagina = numPagina-1;
+                        out.println("<li class=\"page-item\"><a class=\"page-link\" href=Ranking?" + url + "&pg=" + antPagina + "#resultados>Anterior</a></li>");
+                        out.println("<li class=\"page-item\"><a class=\"page-link\" href=Ranking?" + url + "&pg=" + proxPagina + "#resultados>Próximo</a></li>");
+                    }
+                %>
+            </div>
         </div>
     </section>
     <%

@@ -51,12 +51,14 @@ public class Ranking extends HttpServlet {
             throws ServletException, IOException {
         String genero1;
         String genero2;
+        String pagina;
         
         genero1 = request.getParameter("genero1");
         genero2 = request.getParameter("genero2");
+        pagina = request.getParameter("pg");
         
         RankingDAO rDAO = new RankingDAO();
-        ResultadoRanking res = rDAO.Ranking(genero1, genero2);
+        ResultadoRanking res = rDAO.Ranking(genero1, genero2, pagina);
         
         request.setAttribute("ResultadoRanking", res);
         RequestDispatcher rd = request.getRequestDispatcher("/ResultadoRanking.jsp");

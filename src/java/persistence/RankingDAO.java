@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package persistence;
 
 import java.sql.ResultSet;
@@ -11,31 +6,25 @@ import model.Actor;
 import model.Movie;
 import model.ResultadoRanking;
 
-/**
- *
- * @author ricardo
- */
 public class RankingDAO {
     private DBConnection banco;
     public RankingDAO(){
         this.banco = new DBConnection();
     }
     
-    public ResultadoRanking Ranking(String g1, String g2){
+    public ResultadoRanking Ranking(String g1, String g2, String pagina){
         ResultSet rs = null;
         ResultadoRanking rr = new ResultadoRanking();
+        int numPagina = 1;
+
+        if (pagina != null) {
+            numPagina = Integer.parseInt(pagina);
+        }
+
+        g1 = "'" + g1 + "'";
+        g2 = "'" + g2 + "'";
         
-        String SQL =  "SELECT COUNT (gm.movieid) AS quantidade, a.name, a.sex " +
-                    "FROM movieactor AS ma " +
-                    "INNER JOIN ( " +
-                    "		SELECT gm.movieid " +
-                    "		FROM genresmovies AS gm, genres AS g " +
-                    "		WHERE g.genreid = gm.genreid " +
-                    "		AND (g.genre = '" + g1 + "' OR g.genre = '" + g2 + "') " +
-                    "	) AS gm ON ma.movieid = gm.movieid " +
-                    "INNER JOIN actors AS a ON a.actorid = ma.actorid " +
-                    "GROUP BY a.actorid " +
-                    "ORDER BY quantidade DESC;";
+        String SQL =  "SELECT * FROM busca_ranking(" + g1 + ", " + g2 + ", " + numPagina + ");";
         
         try { 
             banco.stmt.execute(SQL);
