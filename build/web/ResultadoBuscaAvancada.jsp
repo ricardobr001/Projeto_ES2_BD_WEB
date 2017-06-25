@@ -110,7 +110,6 @@
                             <th>Título</th>
                             <th>Ano</th>
                             <th>Idioma</th>
-                            <th>Gênero</th>
                             <th>Nome do Ator</th>
                             <th>Personagem</th>
                         </tr>
@@ -128,24 +127,32 @@
                 <%
                     String url = request.getQueryString();
                     String pagina = request.getParameter("pg");
-
-                    if (pagina == null)
-                        pagina = "1";
-
-                    String aux = "&pg=" + pagina;
+                    int numPagina, proxPagina, antPagina;
+                    
+                    if (pagina != null) {
+                        numPagina = Integer.parseInt(pagina);
+                    }
+                    else {
+                        numPagina = 1;
+                    }
+                    
+                    String aux = "&pg=" + numPagina;
                     url = url.replace(aux, "");
 
-                    out.println("num tuplas: " + res.size());
+                    out.println("<ul class=\"pager\">");
 
-                    out.println("<ul class=\"pagination\">");
-                    for (int i = 1; i < res.size()-1; i++) {
-                        if (Integer.parseInt(pagina) == i) {
-                            out.println("<li class=\"page-item active\"><a class=\"page-link\" href=BuscaAvancada?" + url + "&pg=" + i + ">" + i + "</a></li>");
-
-                        }
-                        else {
-                            out.println("<li class=\"page-item\"><a class=\"page-link\" href=BuscaAvancada?" + url + "&pg=" + i + ">" + i + "</a></li>");
-                        }
+                    if (numPagina == 1 && res.size() == 30) {
+                        out.println("<li class=\"page-item\"><a class=\"page-link\" href=BuscaAvancada?" + url + "&pg=2#resultados>Próximo</a></li>");
+                    }
+                    else if (res.size() < 30) {
+                        antPagina = numPagina-1;
+                        out.println("<li class=\"page-item\"><a class=\"page-link\" href=BuscaAvancada?" + url + "&pg=" + antPagina + "#resultados>Anterior</a></li>");
+                    }
+                    else {
+                        proxPagina = numPagina+1;
+                        antPagina = numPagina-1;
+                        out.println("<li class=\"page-item\"><a class=\"page-link\" href=BuscaAvancada?" + url + "&pg=" + antPagina + "#resultados>Anterior</a></li>");
+                        out.println("<li class=\"page-item\"><a class=\"page-link\" href=BuscaAvancada?" + url + "&pg=" + proxPagina + "#resultados>Próximo</a></li>");
                     }
                 %>
             </div>

@@ -1,19 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
-/**
- *
- * @author ricardo
- */
 public class Movie {
     private int id;
     private String name;
     private String year;
-    private String genres;
     private String languages;
 
     public int getId() {
@@ -38,14 +28,6 @@ public class Movie {
 
     public void setYear(String year) {
         this.year = year;
-    }
-
-    public String getGenres() {
-        return genres;
-    }
-
-    public void setGenres(String genres) {
-        this.genres = genres;
     }
 
     public String getLanguages() {

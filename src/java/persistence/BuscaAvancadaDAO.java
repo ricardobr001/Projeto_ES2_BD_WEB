@@ -19,11 +19,11 @@ public class BuscaAvancadaDAO {
         int offset = 0;
 
         if (pagina != null) {
-            offset = (Integer.parseInt(pagina) - 1) * 10;
+            offset = (Integer.parseInt(pagina) - 1) * 30;
         }
 
         
-        String SQL =    "SELECT mlg.title, mlg.year, mlg.language, mlg.genre, act.name, ma.character " +
+        String SQL =    "SELECT DISTINCT mlg.title, mlg.year, mlg.language, act.name, ma.character " +
                         "FROM movieactor AS ma " +
                         "INNER JOIN ( " +
                         "            SELECT a.actorid, a.name " +
@@ -42,7 +42,7 @@ public class BuscaAvancadaDAO {
                 
                         SQL = SQL + "        ) AS act ON act.actorid = ma.actorid " +
                         "INNER JOIN ( " +
-                        "        	SELECT m.movieid, m.title, m.year, lg.language, g.genre " +
+                        "        	SELECT m.movieid, m.title, m.year, lg.language " +
                         "        	FROM movie AS m " +
                         "        	INNER JOIN ( " +
                         "            		    SELECT lm.movieid, lang.language " +
@@ -61,8 +61,8 @@ public class BuscaAvancadaDAO {
                         
                         SQL = SQL + "            		) AS lg ON lg.movieid = m.movieid " +
                         "            INNER JOIN genresmovies AS gm ON gm.movieid = m.movieid " +
-                        "            INNER JOIN genres AS g ON g.genreid = gm.genreid " +
                         "	    ) AS mlg ON mlg.movieid = ma.movieid " +
+                        "ORDER BY mlg.title " +
                         "LIMIT 30 " +
                         "OFFSET " + offset + ";";
         
@@ -76,18 +76,16 @@ public class BuscaAvancadaDAO {
                 // 1 - title
                 // 2 - year
                 // 3 - language
-                // 4 - genre
-                // 5 - name
-                // 6 - character
+                // 4 - name
+                // 5 - character
                 Actor a = new Actor();
                 Movie m = new Movie();
                 
                 m.setName(rs.getString(1));
                 m.setYear(rs.getString(2));
                 m.setLanguages(rs.getString(3));
-                m.setGenres(rs.getString(4));
-                a.setName(rs.getString(5));
-                a.setCharacter(rs.getString(6));
+                a.setName(rs.getString(4));
+                a.setCharacter(rs.getString(5));
                 
                 rb.popula(a, m);
             }
