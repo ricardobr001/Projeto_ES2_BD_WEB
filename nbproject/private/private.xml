@@ -5,6 +5,7 @@
         <group>
             <file>file:/C:/Users/Luciane/Documents/Projeto_ES2_BD_WEB/src/java/controllers/Ranking.java</file>
             <file>file:/C:/Users/Luciane/Documents/Projeto_ES2_BD_WEB/src/java/controllers/BuscaAvancada.java</file>
+            <file>file:/C:/Users/Luciane/Documents/Projeto_ES2_BD_WEB/src/java/persistence/DBConnection.java</file>
             <file>file:/C:/Users/Luciane/Documents/Projeto_ES2_BD_WEB/src/java/persistence/BuscaAvancadaDAO.java</file>
             <file>file:/C:/Users/Luciane/Documents/Projeto_ES2_BD_WEB/src/java/persistence/RankingDAO.java</file>
         </group>
