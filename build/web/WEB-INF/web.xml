@@ -12,6 +12,10 @@
         <servlet-name>Teste</servlet-name>
         <servlet-class>controllers.Teste</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BuscaFilmes</servlet-name>
+        <servlet-class>controllers.BuscaFilmes</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Ranking</servlet-name>
         <url-pattern>/Ranking</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>Teste</servlet-name>
         <url-pattern>/Teste</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BuscaFilmes</servlet-name>
+        <url-pattern>/BuscaFilmes</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -27,7 +27,7 @@ public class ResultadoRanking {
     
     public String returnDados(int i){
         return  "<td>" + this.quant.get(i) + "</td>" + 
-                "<td>" + this.actor.get(i).getName() + "</td>" +
+                "<td>" + this.actor.get(i).getName() + "</td>" + // ==== monta a tag pra ficar clicavel nessa linha!!!! =====
                 "<td>" + this.actor.get(i).getSex() + "</td>";
     }
     
