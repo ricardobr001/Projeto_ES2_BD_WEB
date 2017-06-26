@@ -53,10 +53,10 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li class="page-scroll">
+                    <li>
                         <a href="#buscas">Buscas</a>
                     </li>
-                    <li class="page-scroll">
+                    <li>
                         <a href="#about">Sobre</a>
                     </li>
                 </ul>

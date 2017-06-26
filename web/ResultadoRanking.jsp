@@ -54,12 +54,12 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li class="page-scroll">
-                        <a href="index.jsp">Voltar</a>
+                    <li>
+                        <a href="index.jsp">Ir para o início</a>
                     </li>
-                    <!-- <li class="page-scroll">
-                        <a href="#about">Sobre</a>
-                    </li> -->
+                    <li>
+                        <a href="BuscaAvancada.jsp">Busca avançada</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -144,7 +144,7 @@
                     if (numPagina == 1 && res.size() == 30) {
                         out.println("<li class=\"page-item\"><a class=\"page-link\" href=Ranking?" + url + "&pg=2#resultados>Próximo</a></li>");
                     }
-                    else if (res.size() < 30) {
+                    else if (res.size() < 30 && numPagina != 1) {
                         antPagina = numPagina-1;
                         out.println("<li class=\"page-item\"><a class=\"page-link\" href=Ranking?" + url + "&pg=" + antPagina + "#resultados>Anterior</a></li>");
                     }

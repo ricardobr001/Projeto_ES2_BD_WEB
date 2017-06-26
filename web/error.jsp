@@ -1,3 +1,9 @@
+<%-- 
+    Document   : error
+    Created on : 25/06/2017, 20:47:43
+    Author     : ricardo
+--%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -56,9 +62,6 @@
                     <li>
                         <a href="index.jsp">Ir para o início</a>
                     </li>
-                    <li>
-                        <a href="BuscaAvancada.jsp">Busca avançada</a>
-                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -72,7 +75,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-text">
-                        <h1 class="name">Ranking dos atores</h1>
+                        <h1 class="name">Erro</h1>
                         <hr class="star-light">
                     </div>
                 </div>
@@ -84,97 +87,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Buscar</h2>
+                    <h2>Ooops, algo deu errado</h2>
                     <hr class="star-primary">
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <form method="GET" action="Ranking">
-                        <div class="row control-group">
-                            <div class="form-group col-sm-6">
-                                <label for="genero">Primeiro gênero</label>
-                                <select class="form-control" id="genero" name="genero1">
-                                    <option>Escolher</option>
-                                    <option>Action</option>
-                                    <option>Adult</option>
-                                    <option>Adventure</option>
-                                    <option>Animation</option>
-                                    <option>Biography</option>
-                                    <option>Comedy</option>
-                                    <option>Crime</option>
-                                    <option>Documentary</option>
-                                    <option>Drama</option>
-                                    <option>Family</option>
-                                    <option>Fantasy</option>
-                                    <option>Film-Noir</option>
-                                    <option>Game-Show</option>
-                                    <option>History</option>
-                                    <option>Horror</option>
-                                    <option>Lifestyle</option>
-                                    <option>Music</option>
-                                    <option>Musical</option>
-                                    <option>Mystery</option>
-                                    <option>News</option>
-                                    <option>Reality-TV</option>
-                                    <option>Romance</option>
-                                    <option>Sci-Fi</option>
-                                    <option>Short</option>
-                                    <option>Sport</option>
-                                    <option>Talk-Show</option>
-                                    <option>Thriller</option>
-                                    <option>War</option>
-                                    <option>Western</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label for="genero">Segundo gênero</label>
-                                <select class="form-control" id="genero" name="genero2">
-                                    <option>Escolher</option>
-                                    <option>Action</option>
-                                    <option>Adult</option>
-                                    <option>Adventure</option>
-                                    <option>Animation</option>
-                                    <option>Biography</option>
-                                    <option>Comedy</option>
-                                    <option>Crime</option>
-                                    <option>Documentary</option>
-                                    <option>Drama</option>
-                                    <option>Family</option>
-                                    <option>Fantasy</option>
-                                    <option>Film-Noir</option>
-                                    <option>Game-Show</option>
-                                    <option>History</option>
-                                    <option>Horror</option>
-                                    <option>Lifestyle</option>
-                                    <option>Music</option>
-                                    <option>Musical</option>
-                                    <option>Mystery</option>
-                                    <option>News</option>
-                                    <option>Reality-TV</option>
-                                    <option>Romance</option>
-                                    <option>Sci-Fi</option>
-                                    <option>Short</option>
-                                    <option>Sport</option>
-                                    <option>Talk-Show</option>
-                                    <option>Thriller</option>
-                                    <option>War</option>
-                                    <option>Western</option>
-                                </select>
-                            </div>
-                        </div>
-                        <br>
-                        <div id="success"></div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <button type="submit" value="submit" class="btn btn-success btn-lg">Buscar</button>
-                            </div>
-                        </div>
-                    </form>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <p>Aparentemente houve um erro, por favor tente novamente ou informe um administrador do sistema.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </section>   
 
     <!-- Footer -->
     <footer class="text-center">
@@ -225,3 +148,4 @@
 </body>
 
 </html>
+

@@ -53,12 +53,12 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li class="page-scroll">
-                        <a href="index.jsp">Voltar</a>
+                    <li>
+                        <a href="index.jsp">Ir para o início</a>
                     </li>
-                    <!-- <li class="page-scroll">
-                        <a href="#about">Sobre</a>
-                    </li> -->
+                    <li>
+                        <a href="BuscaAvancada.jsp">Busca avançada</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -72,7 +72,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-text">
-                        <h1 class="name">Fazer back e preparar front para receber resposta da busca</h1>
+                        <h1 class="name">Ranking dos atores</h1>
                         <hr class="star-light">
                     </div>
                 </div>
