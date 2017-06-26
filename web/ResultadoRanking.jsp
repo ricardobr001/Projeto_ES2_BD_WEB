@@ -54,12 +54,12 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li class="page-scroll">
-                        <a href="index.jsp">Voltar</a>
+                    <li>
+                        <a href="index.jsp">Ir para o início</a>
                     </li>
-                    <!-- <li class="page-scroll">
-                        <a href="#about">Sobre</a>
-                    </li> -->
+                    <li>
+                        <a href="BuscaAvancada.jsp">Busca avançada</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

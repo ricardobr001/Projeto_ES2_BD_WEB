@@ -53,8 +53,11 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li class="page-scroll">
-                        <a href="index.jsp">Voltar</a>
+                    <li>
+                        <a href="index.jsp">Ir para o início</a>
+                    </li>
+                    <li>
+                        <a href="ranking.jsp">Ranking</a>
                     </li>
                 </ul>
             </div>
@@ -69,7 +72,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-text">
-                        <h1 class="name">Fazer back-end para busca</h1>
+                        <h1 class="name">Busca de atores e gêneros</h1>
                         <hr class="star-light">
                     </div>
                 </div>

@@ -59,12 +59,9 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li class="page-scroll">
+                    <li>
                         <a href="index.jsp">Ir para o início</a>
                     </li>
-                    <!-- <li class="page-scroll">
-                        <a href="#about">Sobre</a>
-                    </li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
