@@ -83,6 +83,9 @@
 
     <%
         ResultadoRanking res = (ResultadoRanking)request.getAttribute("ResultadoRanking");
+        String pagina = (String)request.getAttribute("pagina");
+        String url = (String)request.getAttribute("url");
+        
         if(res == null) {
     %>
     <section id="contact">
@@ -125,8 +128,6 @@
             </table>
             <div class="text-center">
                 <%
-                    String url = request.getQueryString();
-                    String pagina = request.getParameter("pg");
                     int numPagina, proxPagina, antPagina;
 
                     if (pagina != null) {

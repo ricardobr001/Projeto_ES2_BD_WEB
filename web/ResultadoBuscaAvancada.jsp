@@ -85,23 +85,26 @@
     </header>
     <%
         ResultadoBusca res = (ResultadoBusca)request.getAttribute("ResultadoBusca");
+        String pagina = (String)request.getAttribute("pagina");
+        String url = (String)request.getAttribute("url");
+        
         if(res == null) {
     %>
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Ooops, algo deu errado</h2>
-                    <hr class="star-primary">
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2>Ooops, algo deu errado</h2>
+                        <hr class="star-primary">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <p>Aparentemente houve um erro, por favor tente novamente ou informe um administrador do sistema.</p>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p>Aparentemente houve um erro, por favor tente novamente ou informe um administrador do sistema.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
     <%
         } else {
     %>
@@ -128,8 +131,6 @@
             </table>
             <div class="text-center">
                 <%
-                    String url = request.getQueryString();
-                    String pagina = request.getParameter("pg");
                     int numPagina, proxPagina, antPagina;
                     
                     if (pagina != null) {
