@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package persistence;
 
 import java.sql.ResultSet;
@@ -10,10 +5,6 @@ import java.sql.SQLException;
 import model.Movie;
 import model.ResultadoFilmes;
 
-/**
- *
- * @author ricardo
- */
 public class FilmesDAO {
     private DBConnection banco;
     

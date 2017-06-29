@@ -1,16 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author ricardo
- */
 public class ResultadoRanking {
     private ArrayList<Actor> actor;
     private ArrayList<Integer> quant;
@@ -26,8 +17,10 @@ public class ResultadoRanking {
     }
     
     public String returnDados(int i){
+        String nome = this.actor.get(i).getName();
+        
         return  "<td>" + this.quant.get(i) + "</td>" + 
-                "<td>" + this.actor.get(i).getName() + "</td>" + // ==== monta a tag pra ficar clicavel nessa linha!!!! =====
+                "<td><form method=\"GET\" action=\"BuscaFilmes\"><button name=\"ator\" value=\"" + nome + "\">" + nome + "</button></form></td>" + // ==== monta a tag pra ficar clicavel nessa linha!!!! =====
                 "<td>" + this.actor.get(i).getSex() + "</td>";
     }
     

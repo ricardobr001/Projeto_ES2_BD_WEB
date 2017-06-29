@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="model.*"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +24,13 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 
@@ -50,7 +58,7 @@
                         <a href="index.jsp">Ir para o início</a>
                     </li>
                     <li>
-                        <a href="ranking.jsp">Ranking</a>
+                        <a href="BuscaAvancada.jsp">Busca avançada</a>
                     </li>
                 </ul>
             </div>
@@ -65,71 +73,42 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-text">
-                        <h1 class="name">Busca de atores e gêneros</h1>
+                        <h1 class="name">Resultados</h1>
                         <hr class="star-light">
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    
-    <section id="contact">
+    <%
+        ResultadoFilmes res = (ResultadoFilmes)request.getAttribute("ResultadoFilmes");
+        
+        if (res != null) {
+    %>
+
+    <section id="resultados">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Buscar</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <form method="GET" action="BuscaAvancada">
-                        <div class="input_fields_wrap_ator">
-                            <button class="add_field_button_ator list-group-item list-group-item-success">Adicionar mais atores</button>
-                            <div class="row control-group">
-                                <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label for="nome">Nome do Ator/Atriz</label>
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        placeholder="Nome do ator(a)"
-                                        id="nome"
-                                        name="nome"
-                                        required data-validation-required-message="Please enter your name."
-                                    >                                     
-                                </div>                               
-                            </div>
-                        </div>
-                        <br>
-                        <div class="input_fields_wrap_idioma">
-                            <button class="add_field_button_idioma list-group-item list-group-item-success">Adicionar mais idiomas</button>
-                            <div class="row control-group">
-                                <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label for="idioma">Idioma</label>
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        placeholder="Idioma"
-                                        id="idioma"
-                                        name="idioma"
-                                        required data-validation-required-message="Please enter a language."
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div id="success"></div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <button type="submit" value="submit" class="btn btn-success btn-lg">Buscar</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            <table class="table table-bordered table-striped table-hover table-condensed table-responsive">
+                <thead>
+                        <tr>
+                            <th>Nome do filme</th>
+                            <th>Ano</th>
+                        </tr>
+                </thead>
+                
+                <tbody>
+                    <% 
+                        for (int i = 0 ; i < res.size() ; i++){
+                            out.println("<tr>" + res.returnDados(i) + "</tr>");
+                        }
+                    %>
+                </tbody>
+            </table>
         </div>
     </section>
-
+    <%
+        }
+    %>
     <!-- Footer -->
     <footer class="text-center">
         <div class="footer-above">

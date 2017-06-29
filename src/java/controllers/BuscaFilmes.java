@@ -1,21 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controllers;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.ResultadoFilmes;
+import persistence.FilmesDAO;
 
-/**
- *
- * @author ricardo
- */
 public class BuscaFilmes extends HttpServlet {
 
     /**
@@ -44,7 +39,6 @@ public class BuscaFilmes extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -56,9 +50,16 @@ public class BuscaFilmes extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        /***********************************************/
-        /************USA QUAL MÉTODO VC PREFERIR********/
-        /***********************************************/
+        String ator;
+        
+        ator = request.getParameter("ator");
+        
+        FilmesDAO rDAO = new FilmesDAO();
+        ResultadoFilmes res = rDAO.buscaFilmes(ator);
+        
+        request.setAttribute("ResultadoFilmes", res);
+        RequestDispatcher rd = request.getRequestDispatcher("/ResultadoFilmes.jsp");
+        rd.forward(request, response);
     }
 
     /**
