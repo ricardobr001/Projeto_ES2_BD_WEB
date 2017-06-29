@@ -20,7 +20,7 @@ public class ResultadoRanking {
         String nome = this.actor.get(i).getName();
         
         return  "<td>" + this.quant.get(i) + "</td>" + 
-                "<td><form method=\"GET\" action=\"BuscaFilmes\"><button name=\"ator\" value=\"" + nome + "\">" + nome + "</button></form></td>" + // ==== monta a tag pra ficar clicavel nessa linha!!!! =====
+                "<td><form method=\"GET\" action=\"BuscaFilmes\"><a href=\"javascript:;\" onclick=\"parentNode.submit();\">" + nome + "</a><input type=\"hidden\" name=\"ator\" value=\"" + nome + "\"/></form></td>" +
                 "<td>" + this.actor.get(i).getSex() + "</td>";
     }
     
